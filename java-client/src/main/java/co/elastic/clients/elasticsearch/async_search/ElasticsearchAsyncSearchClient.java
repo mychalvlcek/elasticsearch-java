@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.async_search;
 
 import co.elastic.clients.ApiClient;
@@ -37,6 +33,21 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the async_search namespace.
@@ -64,7 +75,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 * request will be cancelled. Otherwise, the saved search results are deleted.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -84,7 +95,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteAsyncSearchRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -101,7 +112,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 * its ID.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -123,7 +134,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link GetAsyncSearchRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -138,7 +149,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 * its ID.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -160,7 +171,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link GetAsyncSearchRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -177,7 +188,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 * ID.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -197,7 +208,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link AsyncSearchStatusRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -213,7 +224,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 * Executes a search request asynchronously.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -234,7 +245,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link SubmitRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -248,7 +259,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 * Executes a search request asynchronously.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -269,7 +280,7 @@ public class ElasticsearchAsyncSearchClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link SubmitRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/async-search.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/async-search.html">Documentation
 	 *      on elastic.co</a>
 	 */
 

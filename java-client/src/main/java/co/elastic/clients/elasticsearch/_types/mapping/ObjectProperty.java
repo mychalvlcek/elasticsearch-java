@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.mapping;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -35,6 +31,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.mapping.ObjectProperty
 
 /**
@@ -48,12 +59,16 @@ public class ObjectProperty extends CorePropertyBase implements PropertyVariant 
 	@Nullable
 	private final Boolean enabled;
 
+	@Nullable
+	private final Boolean subobjects;
+
 	// ---------------------------------------------------------------------------------------------
 
 	private ObjectProperty(Builder builder) {
 		super(builder);
 
 		this.enabled = builder.enabled;
+		this.subobjects = builder.subobjects;
 
 	}
 
@@ -77,6 +92,14 @@ public class ObjectProperty extends CorePropertyBase implements PropertyVariant 
 		return this.enabled;
 	}
 
+	/**
+	 * API name: {@code subobjects}
+	 */
+	@Nullable
+	public final Boolean subobjects() {
+		return this.subobjects;
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
 		generator.write("type", "object");
@@ -84,6 +107,11 @@ public class ObjectProperty extends CorePropertyBase implements PropertyVariant 
 		if (this.enabled != null) {
 			generator.writeKey("enabled");
 			generator.write(this.enabled);
+
+		}
+		if (this.subobjects != null) {
+			generator.writeKey("subobjects");
+			generator.write(this.subobjects);
 
 		}
 
@@ -101,11 +129,22 @@ public class ObjectProperty extends CorePropertyBase implements PropertyVariant 
 		@Nullable
 		private Boolean enabled;
 
+		@Nullable
+		private Boolean subobjects;
+
 		/**
 		 * API name: {@code enabled}
 		 */
 		public final Builder enabled(@Nullable Boolean value) {
 			this.enabled = value;
+			return this;
+		}
+
+		/**
+		 * API name: {@code subobjects}
+		 */
+		public final Builder subobjects(@Nullable Boolean value) {
+			this.subobjects = value;
 			return this;
 		}
 
@@ -138,6 +177,7 @@ public class ObjectProperty extends CorePropertyBase implements PropertyVariant 
 	protected static void setupObjectPropertyDeserializer(ObjectDeserializer<ObjectProperty.Builder> op) {
 		CorePropertyBase.setupCorePropertyBaseDeserializer(op);
 		op.add(Builder::enabled, JsonpDeserializer.booleanDeserializer(), "enabled");
+		op.add(Builder::subobjects, JsonpDeserializer.booleanDeserializer(), "subobjects");
 
 		op.ignore("type");
 	}

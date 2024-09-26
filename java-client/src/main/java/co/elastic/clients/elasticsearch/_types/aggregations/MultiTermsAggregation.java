@@ -17,16 +17,14 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.elasticsearch._types.SortOrder;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ApiTypeHelper;
@@ -41,6 +39,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.aggregations.MultiTermsAggregation
 
 /**
@@ -50,7 +63,7 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class MultiTermsAggregation extends BucketAggregationBase implements AggregationVariant {
+public class MultiTermsAggregation extends BucketAggregationBase implements AggregationVariant, JsonpSerializable {
 	@Nullable
 	private final TermsAggregationCollectMode collectMode;
 
@@ -76,7 +89,6 @@ public class MultiTermsAggregation extends BucketAggregationBase implements Aggr
 	// ---------------------------------------------------------------------------------------------
 
 	private MultiTermsAggregation(Builder builder) {
-		super(builder);
 
 		this.collectMode = builder.collectMode;
 		this.order = ApiTypeHelper.unmodifiable(builder.order);
@@ -183,9 +195,17 @@ public class MultiTermsAggregation extends BucketAggregationBase implements Aggr
 		return this.terms;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		if (this.collectMode != null) {
 			generator.writeKey("collect_mode");
 			this.collectMode.serialize(generator, mapper);
@@ -239,6 +259,11 @@ public class MultiTermsAggregation extends BucketAggregationBase implements Aggr
 
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -424,7 +449,7 @@ public class MultiTermsAggregation extends BucketAggregationBase implements Aggr
 			.lazy(Builder::new, MultiTermsAggregation::setupMultiTermsAggregationDeserializer);
 
 	protected static void setupMultiTermsAggregationDeserializer(ObjectDeserializer<MultiTermsAggregation.Builder> op) {
-		BucketAggregationBase.setupBucketAggregationBaseDeserializer(op);
+
 		op.add(Builder::collectMode, TermsAggregationCollectMode._DESERIALIZER, "collect_mode");
 		op.add(Builder::order,
 				JsonpDeserializer.arrayDeserializer(NamedValue.deserializer(() -> SortOrder._DESERIALIZER)), "order");

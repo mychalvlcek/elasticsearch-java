@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.query_dsl;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -42,6 +38,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.query_dsl.Like
 
 /**
@@ -49,7 +60,7 @@ import javax.annotation.Nullable;
  * the text.
  * 
  * @see <a href=
- *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/query-dsl-mlt-query.html#_document_input_parameters">Documentation
+ *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/query-dsl-mlt-query.html#_document_input_parameters">Documentation
  *      on elastic.co</a>
  * @see <a href="../../doc-files/api-spec.html#_types.query_dsl.Like">API
  *      specification</a>

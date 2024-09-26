@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch;
 
 import co.elastic.clients.ApiClient;
@@ -118,11 +114,13 @@ import co.elastic.clients.elasticsearch.core.UpdateResponse;
 import co.elastic.clients.elasticsearch.dangling_indices.ElasticsearchDanglingIndicesClient;
 import co.elastic.clients.elasticsearch.enrich.ElasticsearchEnrichClient;
 import co.elastic.clients.elasticsearch.eql.ElasticsearchEqlClient;
+import co.elastic.clients.elasticsearch.esql.ElasticsearchEsqlClient;
 import co.elastic.clients.elasticsearch.features.ElasticsearchFeaturesClient;
 import co.elastic.clients.elasticsearch.fleet.ElasticsearchFleetClient;
 import co.elastic.clients.elasticsearch.graph.ElasticsearchGraphClient;
 import co.elastic.clients.elasticsearch.ilm.ElasticsearchIlmClient;
 import co.elastic.clients.elasticsearch.indices.ElasticsearchIndicesClient;
+import co.elastic.clients.elasticsearch.inference.ElasticsearchInferenceClient;
 import co.elastic.clients.elasticsearch.ingest.ElasticsearchIngestClient;
 import co.elastic.clients.elasticsearch.license.ElasticsearchLicenseClient;
 import co.elastic.clients.elasticsearch.logstash.ElasticsearchLogstashClient;
@@ -142,6 +140,7 @@ import co.elastic.clients.elasticsearch.sql.ElasticsearchSqlClient;
 import co.elastic.clients.elasticsearch.ssl.ElasticsearchSslClient;
 import co.elastic.clients.elasticsearch.synonyms.ElasticsearchSynonymsClient;
 import co.elastic.clients.elasticsearch.tasks.ElasticsearchTasksClient;
+import co.elastic.clients.elasticsearch.text_structure.ElasticsearchTextStructureClient;
 import co.elastic.clients.elasticsearch.transform.ElasticsearchTransformClient;
 import co.elastic.clients.elasticsearch.watcher.ElasticsearchWatcherClient;
 import co.elastic.clients.elasticsearch.xpack.ElasticsearchXpackClient;
@@ -158,6 +157,21 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the namespace.
@@ -211,6 +225,10 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 		return new ElasticsearchEqlClient(this.transport, this.transportOptions);
 	}
 
+	public ElasticsearchEsqlClient esql() {
+		return new ElasticsearchEsqlClient(this.transport, this.transportOptions);
+	}
+
 	public ElasticsearchFeaturesClient features() {
 		return new ElasticsearchFeaturesClient(this.transport, this.transportOptions);
 	}
@@ -229,6 +247,10 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 
 	public ElasticsearchIndicesClient indices() {
 		return new ElasticsearchIndicesClient(this.transport, this.transportOptions);
+	}
+
+	public ElasticsearchInferenceClient inference() {
+		return new ElasticsearchInferenceClient(this.transport, this.transportOptions);
 	}
 
 	public ElasticsearchIngestClient ingest() {
@@ -307,6 +329,10 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 		return new ElasticsearchTasksClient(this.transport, this.transportOptions);
 	}
 
+	public ElasticsearchTextStructureClient textStructure() {
+		return new ElasticsearchTextStructureClient(this.transport, this.transportOptions);
+	}
+
 	public ElasticsearchTransformClient transform() {
 		return new ElasticsearchTransformClient(this.transport, this.transportOptions);
 	}
@@ -326,7 +352,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 * request.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/docs-bulk.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/docs-bulk.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -345,7 +371,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 *            a function that initializes a builder to create the
 	 *            {@link BulkRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/docs-bulk.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/docs-bulk.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -359,7 +385,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 * request.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/docs-bulk.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/docs-bulk.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -374,7 +400,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 * Explicitly clears the search context for a scroll.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/clear-scroll-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/clear-scroll-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -392,7 +418,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 *            a function that initializes a builder to create the
 	 *            {@link ClearScrollRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/clear-scroll-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/clear-scroll-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -406,7 +432,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 * Explicitly clears the search context for a scroll.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/clear-scroll-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/clear-scroll-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -421,7 +447,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 * Close a point in time
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/point-in-time-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/point-in-time-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -440,7 +466,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 *            a function that initializes a builder to create the
 	 *            {@link ClosePointInTimeRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/point-in-time-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/point-in-time-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1500,7 +1526,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 * Open a point in time that can be used in subsequent searches
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/point-in-time-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/point-in-time-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1519,7 +1545,7 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	 *            a function that initializes a builder to create the
 	 *            {@link OpenPointInTimeRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/point-in-time-api.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/point-in-time-api.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -2257,7 +2283,8 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	// ----- Endpoint: update_by_query
 
 	/**
-	 * Performs an update on every document in the index without changing the
+	 * Updates documents that match the specified query. If no query is specified,
+	 * performs an update on every document in the index without changing the
 	 * source, for example to pick up a mapping change.
 	 * 
 	 * @see <a href=
@@ -2274,7 +2301,8 @@ public class ElasticsearchClient extends ApiClient<ElasticsearchTransport, Elast
 	}
 
 	/**
-	 * Performs an update on every document in the index without changing the
+	 * Updates documents that match the specified query. If no query is specified,
+	 * performs an update on every document in the index without changing the
 	 * source, for example to pick up a mapping change.
 	 * 
 	 * @param fn

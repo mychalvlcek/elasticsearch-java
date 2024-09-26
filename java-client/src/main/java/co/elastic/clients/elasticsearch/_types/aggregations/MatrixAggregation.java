@@ -17,15 +17,13 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ApiTypeHelper;
@@ -39,6 +37,21 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.aggregations.MatrixAggregation
 
 /**
@@ -48,7 +61,7 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 
-public abstract class MatrixAggregation extends AggregationBase {
+public abstract class MatrixAggregation extends AggregationBase implements JsonpSerializable {
 	private final List<String> fields;
 
 	private final Map<String, Double> missing;
@@ -56,7 +69,6 @@ public abstract class MatrixAggregation extends AggregationBase {
 	// ---------------------------------------------------------------------------------------------
 
 	protected MatrixAggregation(AbstractBuilder<?> builder) {
-		super(builder);
 
 		this.fields = ApiTypeHelper.unmodifiable(builder.fields);
 		this.missing = ApiTypeHelper.unmodifiable(builder.missing);
@@ -82,9 +94,17 @@ public abstract class MatrixAggregation extends AggregationBase {
 		return this.missing;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		if (ApiTypeHelper.isDefined(this.fields)) {
 			generator.writeKey("fields");
 			generator.writeStartArray();
@@ -107,6 +127,11 @@ public abstract class MatrixAggregation extends AggregationBase {
 
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
 	}
 
 	public abstract static class AbstractBuilder<BuilderT extends AbstractBuilder<BuilderT>>
@@ -168,12 +193,14 @@ public abstract class MatrixAggregation extends AggregationBase {
 			return self();
 		}
 
+		protected abstract BuilderT self();
+
 	}
 
 	// ---------------------------------------------------------------------------------------------
 	protected static <BuilderT extends AbstractBuilder<BuilderT>> void setupMatrixAggregationDeserializer(
 			ObjectDeserializer<BuilderT> op) {
-		AggregationBase.setupAggregationBaseDeserializer(op);
+
 		op.add(AbstractBuilder::fields, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
 				"fields");
 		op.add(AbstractBuilder::missing,

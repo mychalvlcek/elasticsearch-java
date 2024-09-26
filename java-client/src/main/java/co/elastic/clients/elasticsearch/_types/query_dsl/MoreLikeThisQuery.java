@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.query_dsl;
 
 import co.elastic.clients.elasticsearch._types.VersionType;
@@ -38,10 +34,24 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.query_dsl.MoreLikeThisQuery
 
@@ -90,8 +100,6 @@ public class MoreLikeThisQuery extends QueryBase implements QueryVariant {
 	@Nullable
 	private final Integer minWordLength;
 
-	private final Map<String, String> perFieldAnalyzer;
-
 	@Nullable
 	private final String routing;
 
@@ -123,7 +131,6 @@ public class MoreLikeThisQuery extends QueryBase implements QueryVariant {
 		this.minimumShouldMatch = builder.minimumShouldMatch;
 		this.minTermFreq = builder.minTermFreq;
 		this.minWordLength = builder.minWordLength;
-		this.perFieldAnalyzer = ApiTypeHelper.unmodifiable(builder.perFieldAnalyzer);
 		this.routing = builder.routing;
 		this.stopWords = ApiTypeHelper.unmodifiable(builder.stopWords);
 		this.unlike = ApiTypeHelper.unmodifiable(builder.unlike);
@@ -287,15 +294,6 @@ public class MoreLikeThisQuery extends QueryBase implements QueryVariant {
 	}
 
 	/**
-	 * Overrides the default analyzer.
-	 * <p>
-	 * API name: {@code per_field_analyzer}
-	 */
-	public final Map<String, String> perFieldAnalyzer() {
-		return this.perFieldAnalyzer;
-	}
-
-	/**
 	 * API name: {@code routing}
 	 */
 	@Nullable
@@ -416,17 +414,6 @@ public class MoreLikeThisQuery extends QueryBase implements QueryVariant {
 			generator.write(this.minWordLength);
 
 		}
-		if (ApiTypeHelper.isDefined(this.perFieldAnalyzer)) {
-			generator.writeKey("per_field_analyzer");
-			generator.writeStartObject();
-			for (Map.Entry<String, String> item0 : this.perFieldAnalyzer.entrySet()) {
-				generator.writeKey(item0.getKey());
-				generator.write(item0.getValue());
-
-			}
-			generator.writeEnd();
-
-		}
 		if (this.routing != null) {
 			generator.writeKey("routing");
 			generator.write(this.routing);
@@ -508,9 +495,6 @@ public class MoreLikeThisQuery extends QueryBase implements QueryVariant {
 
 		@Nullable
 		private Integer minWordLength;
-
-		@Nullable
-		private Map<String, String> perFieldAnalyzer;
 
 		@Nullable
 		private String routing;
@@ -715,30 +699,6 @@ public class MoreLikeThisQuery extends QueryBase implements QueryVariant {
 		}
 
 		/**
-		 * Overrides the default analyzer.
-		 * <p>
-		 * API name: {@code per_field_analyzer}
-		 * <p>
-		 * Adds all entries of <code>map</code> to <code>perFieldAnalyzer</code>.
-		 */
-		public final Builder perFieldAnalyzer(Map<String, String> map) {
-			this.perFieldAnalyzer = _mapPutAll(this.perFieldAnalyzer, map);
-			return this;
-		}
-
-		/**
-		 * Overrides the default analyzer.
-		 * <p>
-		 * API name: {@code per_field_analyzer}
-		 * <p>
-		 * Adds an entry to <code>perFieldAnalyzer</code>.
-		 */
-		public final Builder perFieldAnalyzer(String key, String value) {
-			this.perFieldAnalyzer = _mapPut(this.perFieldAnalyzer, key, value);
-			return this;
-		}
-
-		/**
 		 * API name: {@code routing}
 		 */
 		public final Builder routing(@Nullable String value) {
@@ -865,8 +825,6 @@ public class MoreLikeThisQuery extends QueryBase implements QueryVariant {
 		op.add(Builder::minimumShouldMatch, JsonpDeserializer.stringDeserializer(), "minimum_should_match");
 		op.add(Builder::minTermFreq, JsonpDeserializer.integerDeserializer(), "min_term_freq");
 		op.add(Builder::minWordLength, JsonpDeserializer.integerDeserializer(), "min_word_length");
-		op.add(Builder::perFieldAnalyzer,
-				JsonpDeserializer.stringMapDeserializer(JsonpDeserializer.stringDeserializer()), "per_field_analyzer");
 		op.add(Builder::routing, JsonpDeserializer.stringDeserializer(), "routing");
 		op.add(Builder::stopWords, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
 				"stop_words");

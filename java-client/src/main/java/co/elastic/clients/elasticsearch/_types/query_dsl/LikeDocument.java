@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.query_dsl;
 
 import co.elastic.clients.elasticsearch._types.VersionType;
@@ -43,6 +39,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.query_dsl.LikeDocument
 
@@ -133,6 +144,8 @@ public class LikeDocument implements JsonpSerializable {
 	}
 
 	/**
+	 * Overrides the default analyzer.
+	 * <p>
 	 * API name: {@code per_field_analyzer}
 	 */
 	public final Map<String, String> perFieldAnalyzer() {
@@ -314,6 +327,8 @@ public class LikeDocument implements JsonpSerializable {
 		}
 
 		/**
+		 * Overrides the default analyzer.
+		 * <p>
 		 * API name: {@code per_field_analyzer}
 		 * <p>
 		 * Adds all entries of <code>map</code> to <code>perFieldAnalyzer</code>.
@@ -324,6 +339,8 @@ public class LikeDocument implements JsonpSerializable {
 		}
 
 		/**
+		 * Overrides the default analyzer.
+		 * <p>
 		 * API name: {@code per_field_analyzer}
 		 * <p>
 		 * Adds an entry to <code>perFieldAnalyzer</code>.

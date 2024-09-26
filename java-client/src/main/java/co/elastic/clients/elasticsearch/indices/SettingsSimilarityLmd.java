@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -30,13 +26,28 @@ import co.elastic.clients.json.JsonpSerializable;
 import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
-import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
-import java.lang.Integer;
+import java.lang.Double;
 import java.util.Objects;
 import java.util.function.Function;
+import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: indices._types.SettingsSimilarityLmd
 
@@ -47,14 +58,15 @@ import java.util.function.Function;
  *      specification</a>
  */
 @JsonpDeserializable
-public class SettingsSimilarityLmd implements JsonpSerializable {
-	private final int mu;
+public class SettingsSimilarityLmd implements SettingsSimilarityVariant, JsonpSerializable {
+	@Nullable
+	private final Double mu;
 
 	// ---------------------------------------------------------------------------------------------
 
 	private SettingsSimilarityLmd(Builder builder) {
 
-		this.mu = ApiTypeHelper.requireNonNull(builder.mu, this, "mu");
+		this.mu = builder.mu;
 
 	}
 
@@ -63,9 +75,18 @@ public class SettingsSimilarityLmd implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code mu}
+	 * SettingsSimilarity variant kind.
 	 */
-	public final int mu() {
+	@Override
+	public SettingsSimilarity.Kind _settingsSimilarityKind() {
+		return SettingsSimilarity.Kind.LMDirichlet;
+	}
+
+	/**
+	 * API name: {@code mu}
+	 */
+	@Nullable
+	public final Double mu() {
 		return this.mu;
 	}
 
@@ -80,8 +101,13 @@ public class SettingsSimilarityLmd implements JsonpSerializable {
 
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		generator.writeKey("mu");
-		generator.write(this.mu);
+		generator.write("type", "LMDirichlet");
+
+		if (this.mu != null) {
+			generator.writeKey("mu");
+			generator.write(this.mu);
+
+		}
 
 	}
 
@@ -99,12 +125,13 @@ public class SettingsSimilarityLmd implements JsonpSerializable {
 	public static class Builder extends WithJsonObjectBuilderBase<Builder>
 			implements
 				ObjectBuilder<SettingsSimilarityLmd> {
-		private Integer mu;
+		@Nullable
+		private Double mu;
 
 		/**
-		 * Required - API name: {@code mu}
+		 * API name: {@code mu}
 		 */
-		public final Builder mu(int value) {
+		public final Builder mu(@Nullable Double value) {
 			this.mu = value;
 			return this;
 		}
@@ -137,8 +164,9 @@ public class SettingsSimilarityLmd implements JsonpSerializable {
 
 	protected static void setupSettingsSimilarityLmdDeserializer(ObjectDeserializer<SettingsSimilarityLmd.Builder> op) {
 
-		op.add(Builder::mu, JsonpDeserializer.integerDeserializer(), "mu");
+		op.add(Builder::mu, JsonpDeserializer.doubleDeserializer(), "mu");
 
+		op.ignore("type");
 	}
 
 }

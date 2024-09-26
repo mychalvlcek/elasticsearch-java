@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.tasks;
 
 import co.elastic.clients.ApiClient;
@@ -35,6 +31,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.io.IOException;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the tasks namespace.
@@ -60,7 +71,7 @@ public class ElasticsearchTasksClient extends ApiClient<ElasticsearchTransport, 
 	 * Cancels a task, if it can be cancelled through an API.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/tasks.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/tasks.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -78,7 +89,7 @@ public class ElasticsearchTasksClient extends ApiClient<ElasticsearchTransport, 
 	 *            a function that initializes a builder to create the
 	 *            {@link CancelRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/tasks.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/tasks.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -91,7 +102,7 @@ public class ElasticsearchTasksClient extends ApiClient<ElasticsearchTransport, 
 	 * Cancels a task, if it can be cancelled through an API.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/tasks.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/tasks.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -106,7 +117,7 @@ public class ElasticsearchTasksClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns information about a task.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/tasks.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/tasks.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -124,7 +135,7 @@ public class ElasticsearchTasksClient extends ApiClient<ElasticsearchTransport, 
 	 *            a function that initializes a builder to create the
 	 *            {@link GetTasksRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/tasks.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/tasks.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -139,7 +150,7 @@ public class ElasticsearchTasksClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns a list of tasks.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/tasks.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/tasks.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -157,7 +168,7 @@ public class ElasticsearchTasksClient extends ApiClient<ElasticsearchTransport, 
 	 *            a function that initializes a builder to create the
 	 *            {@link ListRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/tasks.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/tasks.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -170,7 +181,7 @@ public class ElasticsearchTasksClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns a list of tasks.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/tasks.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/tasks.html">Documentation
 	 *      on elastic.co</a>
 	 */
 

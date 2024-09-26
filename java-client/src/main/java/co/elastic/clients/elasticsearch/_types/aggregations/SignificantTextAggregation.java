@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.elasticsearch._types.EmptyObject;
@@ -28,6 +24,8 @@ import co.elastic.clients.elasticsearch._types.query_dsl.Query;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ApiTypeHelper;
@@ -42,6 +40,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.aggregations.SignificantTextAggregation
 
 /**
@@ -51,7 +64,7 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class SignificantTextAggregation extends BucketAggregationBase implements AggregationVariant {
+public class SignificantTextAggregation extends BucketAggregationBase implements AggregationVariant, JsonpSerializable {
 	@Nullable
 	private final Query backgroundFilter;
 
@@ -73,7 +86,8 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 	@Nullable
 	private final GoogleNormalizedDistanceHeuristic gnd;
 
-	private final List<String> include;
+	@Nullable
+	private final TermsInclude include;
 
 	@Nullable
 	private final EmptyObject jlh;
@@ -104,7 +118,6 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 	// ---------------------------------------------------------------------------------------------
 
 	private SignificantTextAggregation(Builder builder) {
-		super(builder);
 
 		this.backgroundFilter = builder.backgroundFilter;
 		this.chiSquare = builder.chiSquare;
@@ -113,7 +126,7 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 		this.field = builder.field;
 		this.filterDuplicateText = builder.filterDuplicateText;
 		this.gnd = builder.gnd;
-		this.include = ApiTypeHelper.unmodifiable(builder.include);
+		this.include = builder.include;
 		this.jlh = builder.jlh;
 		this.minDocCount = builder.minDocCount;
 		this.mutualInformation = builder.mutualInformation;
@@ -217,7 +230,8 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 	 * <p>
 	 * API name: {@code include}
 	 */
-	public final List<String> include() {
+	@Nullable
+	public final TermsInclude include() {
 		return this.include;
 	}
 
@@ -319,9 +333,17 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 		return this.sourceFields;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		if (this.backgroundFilter != null) {
 			generator.writeKey("background_filter");
 			this.backgroundFilter.serialize(generator, mapper);
@@ -356,14 +378,9 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 			this.gnd.serialize(generator, mapper);
 
 		}
-		if (ApiTypeHelper.isDefined(this.include)) {
+		if (this.include != null) {
 			generator.writeKey("include");
-			generator.writeStartArray();
-			for (String item0 : this.include) {
-				generator.write(item0);
-
-			}
-			generator.writeEnd();
+			this.include.serialize(generator, mapper);
 
 		}
 		if (this.jlh != null) {
@@ -419,6 +436,11 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 
 	}
 
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
+	}
+
 	// ---------------------------------------------------------------------------------------------
 
 	/**
@@ -450,7 +472,7 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 		private GoogleNormalizedDistanceHeuristic gnd;
 
 		@Nullable
-		private List<String> include;
+		private TermsInclude include;
 
 		@Nullable
 		private EmptyObject jlh;
@@ -597,11 +619,9 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 		 * Values to include.
 		 * <p>
 		 * API name: {@code include}
-		 * <p>
-		 * Adds all elements of <code>list</code> to <code>include</code>.
 		 */
-		public final Builder include(List<String> list) {
-			this.include = _listAddAll(this.include, list);
+		public final Builder include(@Nullable TermsInclude value) {
+			this.include = value;
 			return this;
 		}
 
@@ -609,12 +629,9 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 		 * Values to include.
 		 * <p>
 		 * API name: {@code include}
-		 * <p>
-		 * Adds one or more values to <code>include</code>.
 		 */
-		public final Builder include(String value, String... values) {
-			this.include = _listAdd(this.include, value, values);
-			return this;
+		public final Builder include(Function<TermsInclude.Builder, ObjectBuilder<TermsInclude>> fn) {
+			return this.include(fn.apply(new TermsInclude.Builder()).build());
 		}
 
 		/**
@@ -799,7 +816,7 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 
 	protected static void setupSignificantTextAggregationDeserializer(
 			ObjectDeserializer<SignificantTextAggregation.Builder> op) {
-		BucketAggregationBase.setupBucketAggregationBaseDeserializer(op);
+
 		op.add(Builder::backgroundFilter, Query._DESERIALIZER, "background_filter");
 		op.add(Builder::chiSquare, ChiSquareHeuristic._DESERIALIZER, "chi_square");
 		op.add(Builder::exclude, TermsExclude._DESERIALIZER, "exclude");
@@ -807,8 +824,7 @@ public class SignificantTextAggregation extends BucketAggregationBase implements
 		op.add(Builder::field, JsonpDeserializer.stringDeserializer(), "field");
 		op.add(Builder::filterDuplicateText, JsonpDeserializer.booleanDeserializer(), "filter_duplicate_text");
 		op.add(Builder::gnd, GoogleNormalizedDistanceHeuristic._DESERIALIZER, "gnd");
-		op.add(Builder::include, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
-				"include");
+		op.add(Builder::include, TermsInclude._DESERIALIZER, "include");
 		op.add(Builder::jlh, EmptyObject._DESERIALIZER, "jlh");
 		op.add(Builder::minDocCount, JsonpDeserializer.longDeserializer(), "min_doc_count");
 		op.add(Builder::mutualInformation, MutualInformationHeuristic._DESERIALIZER, "mutual_information");

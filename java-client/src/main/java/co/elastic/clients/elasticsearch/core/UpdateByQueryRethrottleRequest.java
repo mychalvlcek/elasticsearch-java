@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.core;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -41,6 +37,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _global.update_by_query_rethrottle.Request
 
@@ -74,8 +85,7 @@ public class UpdateByQueryRethrottleRequest extends RequestBase {
 	}
 
 	/**
-	 * The throttle to set on this request in floating sub-requests per second. -1
-	 * means set no throttle.
+	 * The throttle for this request in sub-requests per second.
 	 * <p>
 	 * API name: {@code requests_per_second}
 	 */
@@ -85,7 +95,7 @@ public class UpdateByQueryRethrottleRequest extends RequestBase {
 	}
 
 	/**
-	 * Required - The task id to rethrottle
+	 * Required - The ID for the task.
 	 * <p>
 	 * API name: {@code task_id}
 	 */
@@ -108,8 +118,7 @@ public class UpdateByQueryRethrottleRequest extends RequestBase {
 		private String taskId;
 
 		/**
-		 * The throttle to set on this request in floating sub-requests per second. -1
-		 * means set no throttle.
+		 * The throttle for this request in sub-requests per second.
 		 * <p>
 		 * API name: {@code requests_per_second}
 		 */
@@ -119,7 +128,7 @@ public class UpdateByQueryRethrottleRequest extends RequestBase {
 		}
 
 		/**
-		 * Required - The task id to rethrottle
+		 * Required - The ID for the task.
 		 * <p>
 		 * API name: {@code task_id}
 		 */

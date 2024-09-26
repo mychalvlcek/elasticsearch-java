@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ilm;
 
 import co.elastic.clients.ApiClient;
@@ -34,6 +30,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the ilm namespace.
@@ -299,6 +310,19 @@ public class ElasticsearchIlmAsyncClient extends ApiClient<ElasticsearchTranspor
 	public final CompletableFuture<PutLifecycleResponse> putLifecycle(
 			Function<PutLifecycleRequest.Builder, ObjectBuilder<PutLifecycleRequest>> fn) {
 		return putLifecycle(fn.apply(new PutLifecycleRequest.Builder()).build());
+	}
+
+	/**
+	 * Creates a lifecycle policy
+	 * 
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/current/ilm-put-lifecycle.html">Documentation
+	 *      on elastic.co</a>
+	 */
+
+	public CompletableFuture<PutLifecycleResponse> putLifecycle() {
+		return this.transport.performRequestAsync(new PutLifecycleRequest.Builder().build(),
+				PutLifecycleRequest._ENDPOINT, this.transportOptions);
 	}
 
 	// ----- Endpoint: ilm.remove_policy

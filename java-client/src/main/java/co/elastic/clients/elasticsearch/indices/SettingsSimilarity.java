@@ -17,12 +17,9 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
+import co.elastic.clients.json.JsonEnum;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -30,12 +27,30 @@ import co.elastic.clients.json.JsonpSerializable;
 import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
+import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
+import co.elastic.clients.util.TaggedUnion;
+import co.elastic.clients.util.TaggedUnionUtils;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: indices._types.SettingsSimilarity
 
@@ -46,39 +61,74 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class SettingsSimilarity implements JsonpSerializable {
-	@Nullable
-	private final SettingsSimilarityBm25 bm25;
+public class SettingsSimilarity
+		implements
+			TaggedUnion<SettingsSimilarity.Kind, SettingsSimilarityVariant>,
+			JsonpSerializable {
 
-	@Nullable
-	private final SettingsSimilarityDfi dfi;
+	/**
+	 * {@link SettingsSimilarity} variant kinds.
+	 * 
+	 * @see <a href=
+	 *      "../doc-files/api-spec.html#indices._types.SettingsSimilarity">API
+	 *      specification</a>
+	 */
 
-	@Nullable
-	private final SettingsSimilarityDfr dfr;
+	public enum Kind implements JsonEnum {
+		Bm25("BM25"),
 
-	@Nullable
-	private final SettingsSimilarityIb ib;
+		Boolean("boolean"),
 
-	@Nullable
-	private final SettingsSimilarityLmd lmd;
+		Dfi("DFI"),
 
-	@Nullable
-	private final SettingsSimilarityLmj lmj;
+		Dfr("DFR"),
 
-	@Nullable
-	private final SettingsSimilarityScriptedTfidf scriptedTfidf;
+		Ib("IB"),
 
-	// ---------------------------------------------------------------------------------------------
+		LMDirichlet("LMDirichlet"),
+
+		LMJelinekMercer("LMJelinekMercer"),
+
+		Scripted("scripted"),
+
+		;
+
+		private final String jsonValue;
+
+		Kind(String jsonValue) {
+			this.jsonValue = jsonValue;
+		}
+
+		public String jsonValue() {
+			return this.jsonValue;
+		}
+
+	}
+
+	private final Kind _kind;
+	private final SettingsSimilarityVariant _value;
+
+	@Override
+	public final Kind _kind() {
+		return _kind;
+	}
+
+	@Override
+	public final SettingsSimilarityVariant _get() {
+		return _value;
+	}
+
+	public SettingsSimilarity(SettingsSimilarityVariant value) {
+
+		this._kind = ApiTypeHelper.requireNonNull(value._settingsSimilarityKind(), this, "<variant kind>");
+		this._value = ApiTypeHelper.requireNonNull(value, this, "<variant value>");
+
+	}
 
 	private SettingsSimilarity(Builder builder) {
 
-		this.bm25 = builder.bm25;
-		this.dfi = builder.dfi;
-		this.dfr = builder.dfr;
-		this.ib = builder.ib;
-		this.lmd = builder.lmd;
-		this.lmj = builder.lmj;
-		this.scriptedTfidf = builder.scriptedTfidf;
+		this._kind = ApiTypeHelper.requireNonNull(builder._kind, builder, "<variant kind>");
+		this._value = ApiTypeHelper.requireNonNull(builder._value, builder, "<variant value>");
 
 	}
 
@@ -87,107 +137,146 @@ public class SettingsSimilarity implements JsonpSerializable {
 	}
 
 	/**
-	 * API name: {@code bm25}
+	 * Is this variant instance of kind {@code BM25}?
 	 */
-	@Nullable
-	public final SettingsSimilarityBm25 bm25() {
-		return this.bm25;
+	public boolean isBm25() {
+		return _kind == Kind.Bm25;
 	}
 
 	/**
-	 * API name: {@code dfi}
+	 * Get the {@code BM25} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code BM25} kind.
 	 */
-	@Nullable
-	public final SettingsSimilarityDfi dfi() {
-		return this.dfi;
+	public SettingsSimilarityBm25 bm25() {
+		return TaggedUnionUtils.get(this, Kind.Bm25);
 	}
 
 	/**
-	 * API name: {@code dfr}
+	 * Is this variant instance of kind {@code boolean}?
 	 */
-	@Nullable
-	public final SettingsSimilarityDfr dfr() {
-		return this.dfr;
+	public boolean isBoolean() {
+		return _kind == Kind.Boolean;
 	}
 
 	/**
-	 * API name: {@code ib}
+	 * Get the {@code boolean} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code boolean} kind.
 	 */
-	@Nullable
-	public final SettingsSimilarityIb ib() {
-		return this.ib;
+	public SettingsSimilarityBoolean boolean_() {
+		return TaggedUnionUtils.get(this, Kind.Boolean);
 	}
 
 	/**
-	 * API name: {@code lmd}
+	 * Is this variant instance of kind {@code DFI}?
 	 */
-	@Nullable
-	public final SettingsSimilarityLmd lmd() {
-		return this.lmd;
+	public boolean isDfi() {
+		return _kind == Kind.Dfi;
 	}
 
 	/**
-	 * API name: {@code lmj}
+	 * Get the {@code DFI} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code DFI} kind.
 	 */
-	@Nullable
-	public final SettingsSimilarityLmj lmj() {
-		return this.lmj;
+	public SettingsSimilarityDfi dfi() {
+		return TaggedUnionUtils.get(this, Kind.Dfi);
 	}
 
 	/**
-	 * API name: {@code scripted_tfidf}
+	 * Is this variant instance of kind {@code DFR}?
 	 */
-	@Nullable
-	public final SettingsSimilarityScriptedTfidf scriptedTfidf() {
-		return this.scriptedTfidf;
+	public boolean isDfr() {
+		return _kind == Kind.Dfr;
 	}
 
 	/**
-	 * Serialize this object to JSON.
+	 * Get the {@code DFR} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code DFR} kind.
 	 */
+	public SettingsSimilarityDfr dfr() {
+		return TaggedUnionUtils.get(this, Kind.Dfr);
+	}
+
+	/**
+	 * Is this variant instance of kind {@code IB}?
+	 */
+	public boolean isIb() {
+		return _kind == Kind.Ib;
+	}
+
+	/**
+	 * Get the {@code IB} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code IB} kind.
+	 */
+	public SettingsSimilarityIb ib() {
+		return TaggedUnionUtils.get(this, Kind.Ib);
+	}
+
+	/**
+	 * Is this variant instance of kind {@code LMDirichlet}?
+	 */
+	public boolean isLMDirichlet() {
+		return _kind == Kind.LMDirichlet;
+	}
+
+	/**
+	 * Get the {@code LMDirichlet} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code LMDirichlet} kind.
+	 */
+	public SettingsSimilarityLmd lmdirichlet() {
+		return TaggedUnionUtils.get(this, Kind.LMDirichlet);
+	}
+
+	/**
+	 * Is this variant instance of kind {@code LMJelinekMercer}?
+	 */
+	public boolean isLMJelinekMercer() {
+		return _kind == Kind.LMJelinekMercer;
+	}
+
+	/**
+	 * Get the {@code LMJelinekMercer} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code LMJelinekMercer}
+	 *             kind.
+	 */
+	public SettingsSimilarityLmj lmjelinekmercer() {
+		return TaggedUnionUtils.get(this, Kind.LMJelinekMercer);
+	}
+
+	/**
+	 * Is this variant instance of kind {@code scripted}?
+	 */
+	public boolean isScripted() {
+		return _kind == Kind.Scripted;
+	}
+
+	/**
+	 * Get the {@code scripted} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code scripted} kind.
+	 */
+	public SettingsSimilarityScripted scripted() {
+		return TaggedUnionUtils.get(this, Kind.Scripted);
+	}
+
+	@Override
 	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
-		generator.writeStartObject();
-		serializeInternal(generator, mapper);
-		generator.writeEnd();
-	}
 
-	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
-
-		if (this.bm25 != null) {
-			generator.writeKey("bm25");
-			this.bm25.serialize(generator, mapper);
-
-		}
-		if (this.dfi != null) {
-			generator.writeKey("dfi");
-			this.dfi.serialize(generator, mapper);
-
-		}
-		if (this.dfr != null) {
-			generator.writeKey("dfr");
-			this.dfr.serialize(generator, mapper);
-
-		}
-		if (this.ib != null) {
-			generator.writeKey("ib");
-			this.ib.serialize(generator, mapper);
-
-		}
-		if (this.lmd != null) {
-			generator.writeKey("lmd");
-			this.lmd.serialize(generator, mapper);
-
-		}
-		if (this.lmj != null) {
-			generator.writeKey("lmj");
-			this.lmj.serialize(generator, mapper);
-
-		}
-		if (this.scriptedTfidf != null) {
-			generator.writeKey("scripted_tfidf");
-			this.scriptedTfidf.serialize(generator, mapper);
-
-		}
+		mapper.serialize(_value, generator);
 
 	}
 
@@ -196,178 +285,126 @@ public class SettingsSimilarity implements JsonpSerializable {
 		return JsonpUtils.toString(this);
 	}
 
-	// ---------------------------------------------------------------------------------------------
-
-	/**
-	 * Builder for {@link SettingsSimilarity}.
-	 */
-
 	public static class Builder extends WithJsonObjectBuilderBase<Builder>
 			implements
 				ObjectBuilder<SettingsSimilarity> {
-		@Nullable
-		private SettingsSimilarityBm25 bm25;
-
-		@Nullable
-		private SettingsSimilarityDfi dfi;
-
-		@Nullable
-		private SettingsSimilarityDfr dfr;
-
-		@Nullable
-		private SettingsSimilarityIb ib;
-
-		@Nullable
-		private SettingsSimilarityLmd lmd;
-
-		@Nullable
-		private SettingsSimilarityLmj lmj;
-
-		@Nullable
-		private SettingsSimilarityScriptedTfidf scriptedTfidf;
-
-		/**
-		 * API name: {@code bm25}
-		 */
-		public final Builder bm25(@Nullable SettingsSimilarityBm25 value) {
-			this.bm25 = value;
-			return this;
-		}
-
-		/**
-		 * API name: {@code bm25}
-		 */
-		public final Builder bm25(Function<SettingsSimilarityBm25.Builder, ObjectBuilder<SettingsSimilarityBm25>> fn) {
-			return this.bm25(fn.apply(new SettingsSimilarityBm25.Builder()).build());
-		}
-
-		/**
-		 * API name: {@code dfi}
-		 */
-		public final Builder dfi(@Nullable SettingsSimilarityDfi value) {
-			this.dfi = value;
-			return this;
-		}
-
-		/**
-		 * API name: {@code dfi}
-		 */
-		public final Builder dfi(Function<SettingsSimilarityDfi.Builder, ObjectBuilder<SettingsSimilarityDfi>> fn) {
-			return this.dfi(fn.apply(new SettingsSimilarityDfi.Builder()).build());
-		}
-
-		/**
-		 * API name: {@code dfr}
-		 */
-		public final Builder dfr(@Nullable SettingsSimilarityDfr value) {
-			this.dfr = value;
-			return this;
-		}
-
-		/**
-		 * API name: {@code dfr}
-		 */
-		public final Builder dfr(Function<SettingsSimilarityDfr.Builder, ObjectBuilder<SettingsSimilarityDfr>> fn) {
-			return this.dfr(fn.apply(new SettingsSimilarityDfr.Builder()).build());
-		}
-
-		/**
-		 * API name: {@code ib}
-		 */
-		public final Builder ib(@Nullable SettingsSimilarityIb value) {
-			this.ib = value;
-			return this;
-		}
-
-		/**
-		 * API name: {@code ib}
-		 */
-		public final Builder ib(Function<SettingsSimilarityIb.Builder, ObjectBuilder<SettingsSimilarityIb>> fn) {
-			return this.ib(fn.apply(new SettingsSimilarityIb.Builder()).build());
-		}
-
-		/**
-		 * API name: {@code lmd}
-		 */
-		public final Builder lmd(@Nullable SettingsSimilarityLmd value) {
-			this.lmd = value;
-			return this;
-		}
-
-		/**
-		 * API name: {@code lmd}
-		 */
-		public final Builder lmd(Function<SettingsSimilarityLmd.Builder, ObjectBuilder<SettingsSimilarityLmd>> fn) {
-			return this.lmd(fn.apply(new SettingsSimilarityLmd.Builder()).build());
-		}
-
-		/**
-		 * API name: {@code lmj}
-		 */
-		public final Builder lmj(@Nullable SettingsSimilarityLmj value) {
-			this.lmj = value;
-			return this;
-		}
-
-		/**
-		 * API name: {@code lmj}
-		 */
-		public final Builder lmj(Function<SettingsSimilarityLmj.Builder, ObjectBuilder<SettingsSimilarityLmj>> fn) {
-			return this.lmj(fn.apply(new SettingsSimilarityLmj.Builder()).build());
-		}
-
-		/**
-		 * API name: {@code scripted_tfidf}
-		 */
-		public final Builder scriptedTfidf(@Nullable SettingsSimilarityScriptedTfidf value) {
-			this.scriptedTfidf = value;
-			return this;
-		}
-
-		/**
-		 * API name: {@code scripted_tfidf}
-		 */
-		public final Builder scriptedTfidf(
-				Function<SettingsSimilarityScriptedTfidf.Builder, ObjectBuilder<SettingsSimilarityScriptedTfidf>> fn) {
-			return this.scriptedTfidf(fn.apply(new SettingsSimilarityScriptedTfidf.Builder()).build());
-		}
+		private Kind _kind;
+		private SettingsSimilarityVariant _value;
 
 		@Override
 		protected Builder self() {
 			return this;
 		}
+		public ObjectBuilder<SettingsSimilarity> bm25(SettingsSimilarityBm25 v) {
+			this._kind = Kind.Bm25;
+			this._value = v;
+			return this;
+		}
 
-		/**
-		 * Builds a {@link SettingsSimilarity}.
-		 *
-		 * @throws NullPointerException
-		 *             if some of the required fields are null.
-		 */
+		public ObjectBuilder<SettingsSimilarity> bm25(
+				Function<SettingsSimilarityBm25.Builder, ObjectBuilder<SettingsSimilarityBm25>> fn) {
+			return this.bm25(fn.apply(new SettingsSimilarityBm25.Builder()).build());
+		}
+
+		public ObjectBuilder<SettingsSimilarity> boolean_(SettingsSimilarityBoolean v) {
+			this._kind = Kind.Boolean;
+			this._value = v;
+			return this;
+		}
+
+		public ObjectBuilder<SettingsSimilarity> boolean_(
+				Function<SettingsSimilarityBoolean.Builder, ObjectBuilder<SettingsSimilarityBoolean>> fn) {
+			return this.boolean_(fn.apply(new SettingsSimilarityBoolean.Builder()).build());
+		}
+
+		public ObjectBuilder<SettingsSimilarity> dfi(SettingsSimilarityDfi v) {
+			this._kind = Kind.Dfi;
+			this._value = v;
+			return this;
+		}
+
+		public ObjectBuilder<SettingsSimilarity> dfi(
+				Function<SettingsSimilarityDfi.Builder, ObjectBuilder<SettingsSimilarityDfi>> fn) {
+			return this.dfi(fn.apply(new SettingsSimilarityDfi.Builder()).build());
+		}
+
+		public ObjectBuilder<SettingsSimilarity> dfr(SettingsSimilarityDfr v) {
+			this._kind = Kind.Dfr;
+			this._value = v;
+			return this;
+		}
+
+		public ObjectBuilder<SettingsSimilarity> dfr(
+				Function<SettingsSimilarityDfr.Builder, ObjectBuilder<SettingsSimilarityDfr>> fn) {
+			return this.dfr(fn.apply(new SettingsSimilarityDfr.Builder()).build());
+		}
+
+		public ObjectBuilder<SettingsSimilarity> ib(SettingsSimilarityIb v) {
+			this._kind = Kind.Ib;
+			this._value = v;
+			return this;
+		}
+
+		public ObjectBuilder<SettingsSimilarity> ib(
+				Function<SettingsSimilarityIb.Builder, ObjectBuilder<SettingsSimilarityIb>> fn) {
+			return this.ib(fn.apply(new SettingsSimilarityIb.Builder()).build());
+		}
+
+		public ObjectBuilder<SettingsSimilarity> lmdirichlet(SettingsSimilarityLmd v) {
+			this._kind = Kind.LMDirichlet;
+			this._value = v;
+			return this;
+		}
+
+		public ObjectBuilder<SettingsSimilarity> lmdirichlet(
+				Function<SettingsSimilarityLmd.Builder, ObjectBuilder<SettingsSimilarityLmd>> fn) {
+			return this.lmdirichlet(fn.apply(new SettingsSimilarityLmd.Builder()).build());
+		}
+
+		public ObjectBuilder<SettingsSimilarity> lmjelinekmercer(SettingsSimilarityLmj v) {
+			this._kind = Kind.LMJelinekMercer;
+			this._value = v;
+			return this;
+		}
+
+		public ObjectBuilder<SettingsSimilarity> lmjelinekmercer(
+				Function<SettingsSimilarityLmj.Builder, ObjectBuilder<SettingsSimilarityLmj>> fn) {
+			return this.lmjelinekmercer(fn.apply(new SettingsSimilarityLmj.Builder()).build());
+		}
+
+		public ObjectBuilder<SettingsSimilarity> scripted(SettingsSimilarityScripted v) {
+			this._kind = Kind.Scripted;
+			this._value = v;
+			return this;
+		}
+
+		public ObjectBuilder<SettingsSimilarity> scripted(
+				Function<SettingsSimilarityScripted.Builder, ObjectBuilder<SettingsSimilarityScripted>> fn) {
+			return this.scripted(fn.apply(new SettingsSimilarityScripted.Builder()).build());
+		}
+
 		public SettingsSimilarity build() {
 			_checkSingleUse();
-
 			return new SettingsSimilarity(this);
 		}
+
 	}
 
-	// ---------------------------------------------------------------------------------------------
+	protected static void setupSettingsSimilarityDeserializer(ObjectDeserializer<Builder> op) {
 
-	/**
-	 * Json deserializer for {@link SettingsSimilarity}
-	 */
+		op.add(Builder::bm25, SettingsSimilarityBm25._DESERIALIZER, "BM25");
+		op.add(Builder::boolean_, SettingsSimilarityBoolean._DESERIALIZER, "boolean");
+		op.add(Builder::dfi, SettingsSimilarityDfi._DESERIALIZER, "DFI");
+		op.add(Builder::dfr, SettingsSimilarityDfr._DESERIALIZER, "DFR");
+		op.add(Builder::ib, SettingsSimilarityIb._DESERIALIZER, "IB");
+		op.add(Builder::lmdirichlet, SettingsSimilarityLmd._DESERIALIZER, "LMDirichlet");
+		op.add(Builder::lmjelinekmercer, SettingsSimilarityLmj._DESERIALIZER, "LMJelinekMercer");
+		op.add(Builder::scripted, SettingsSimilarityScripted._DESERIALIZER, "scripted");
+
+		op.setTypeProperty("type", null);
+
+	}
+
 	public static final JsonpDeserializer<SettingsSimilarity> _DESERIALIZER = ObjectBuilderDeserializer
-			.lazy(Builder::new, SettingsSimilarity::setupSettingsSimilarityDeserializer);
-
-	protected static void setupSettingsSimilarityDeserializer(ObjectDeserializer<SettingsSimilarity.Builder> op) {
-
-		op.add(Builder::bm25, SettingsSimilarityBm25._DESERIALIZER, "bm25");
-		op.add(Builder::dfi, SettingsSimilarityDfi._DESERIALIZER, "dfi");
-		op.add(Builder::dfr, SettingsSimilarityDfr._DESERIALIZER, "dfr");
-		op.add(Builder::ib, SettingsSimilarityIb._DESERIALIZER, "ib");
-		op.add(Builder::lmd, SettingsSimilarityLmd._DESERIALIZER, "lmd");
-		op.add(Builder::lmj, SettingsSimilarityLmj._DESERIALIZER, "lmj");
-		op.add(Builder::scriptedTfidf, SettingsSimilarityScriptedTfidf._DESERIALIZER, "scripted_tfidf");
-
-	}
-
+			.lazy(Builder::new, SettingsSimilarity::setupSettingsSimilarityDeserializer, Builder::build);
 }

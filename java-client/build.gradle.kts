@@ -188,7 +188,7 @@ dependencies {
     // Compile and test with the last 7.x version to make sure transition scenarios where
     // the Java API client coexists with a 7.x HLRC work fine
     val elasticsearchVersion = "8.10.0"
-    val jacksonVersion = "2.13.3"
+    val jacksonVersion = "2.17.0"
     val openTelemetryVersion = "1.29.0"
 
     // Apache 2.0
@@ -206,7 +206,7 @@ dependencies {
     // Needed even if using Jackson to have an implementation of the Jsonp object model
     // EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
     // https://github.com/eclipse-ee4j/parsson
-    api("org.eclipse.parsson:parsson:1.0.0")
+    api("org.eclipse.parsson:parsson:1.0.5")
 
     // OpenTelemetry API for native instrumentation of the client.
     // Apache 2.0

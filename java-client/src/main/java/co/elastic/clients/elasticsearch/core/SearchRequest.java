@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.core;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -63,6 +59,7 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,6 +67,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _global.search.Request
 
@@ -125,6 +137,9 @@ public class SearchRequest extends RequestBase implements JsonpSerializable {
 	private final Map<String, JsonData> ext;
 
 	private final List<FieldAndFormat> fields;
+
+	@Nullable
+	private final Boolean forceSyntheticSource;
 
 	@Nullable
 	private final Integer from;
@@ -253,6 +268,7 @@ public class SearchRequest extends RequestBase implements JsonpSerializable {
 		this.explain = builder.explain;
 		this.ext = ApiTypeHelper.unmodifiable(builder.ext);
 		this.fields = ApiTypeHelper.unmodifiable(builder.fields);
+		this.forceSyntheticSource = builder.forceSyntheticSource;
 		this.from = builder.from;
 		this.highlight = builder.highlight;
 		this.ignoreThrottled = builder.ignoreThrottled;
@@ -476,6 +492,19 @@ public class SearchRequest extends RequestBase implements JsonpSerializable {
 	 */
 	public final List<FieldAndFormat> fields() {
 		return this.fields;
+	}
+
+	/**
+	 * Should this request force synthetic _source? Use this to test if the mapping
+	 * supports synthetic _source and to get a sense of the worst case performance.
+	 * Fetches with this enabled will be slower the enabling synthetic source
+	 * natively in the index.
+	 * <p>
+	 * API name: {@code force_synthetic_source}
+	 */
+	@Nullable
+	public final Boolean forceSyntheticSource() {
+		return this.forceSyntheticSource;
 	}
 
 	/**
@@ -1246,6 +1275,9 @@ public class SearchRequest extends RequestBase implements JsonpSerializable {
 		private List<FieldAndFormat> fields;
 
 		@Nullable
+		private Boolean forceSyntheticSource;
+
+		@Nullable
 		private Integer from;
 
 		@Nullable
@@ -1677,6 +1709,19 @@ public class SearchRequest extends RequestBase implements JsonpSerializable {
 		 */
 		public final Builder fields(Function<FieldAndFormat.Builder, ObjectBuilder<FieldAndFormat>> fn) {
 			return fields(fn.apply(new FieldAndFormat.Builder()).build());
+		}
+
+		/**
+		 * Should this request force synthetic _source? Use this to test if the mapping
+		 * supports synthetic _source and to get a sense of the worst case performance.
+		 * Fetches with this enabled will be slower the enabling synthetic source
+		 * natively in the index.
+		 * <p>
+		 * API name: {@code force_synthetic_source}
+		 */
+		public final Builder forceSyntheticSource(@Nullable Boolean value) {
+			this.forceSyntheticSource = value;
+			return this;
 		}
 
 		/**
@@ -2210,6 +2255,78 @@ public class SearchRequest extends RequestBase implements JsonpSerializable {
 		 * <p>
 		 * API name: {@code search_after}
 		 * <p>
+		 * Adds all passed values to <code>searchAfter</code>.
+		 */
+		public final Builder searchAfter(String value, String... values) {
+			this.searchAfter = _listAdd(this.searchAfter, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (String v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.searchAfter = _listAddAll(this.searchAfter, fieldValues);
+			return this;
+		}
+
+		/**
+		 * Used to retrieve the next page of hits using a set of sort values from the
+		 * previous page.
+		 * <p>
+		 * API name: {@code search_after}
+		 * <p>
+		 * Adds all passed values to <code>searchAfter</code>.
+		 */
+		public final Builder searchAfter(long value, long... values) {
+			this.searchAfter = _listAdd(this.searchAfter, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (long v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.searchAfter = _listAddAll(this.searchAfter, fieldValues);
+			return this;
+		}
+
+		/**
+		 * Used to retrieve the next page of hits using a set of sort values from the
+		 * previous page.
+		 * <p>
+		 * API name: {@code search_after}
+		 * <p>
+		 * Adds all passed values to <code>searchAfter</code>.
+		 */
+		public final Builder searchAfter(double value, double... values) {
+			this.searchAfter = _listAdd(this.searchAfter, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (double v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.searchAfter = _listAddAll(this.searchAfter, fieldValues);
+			return this;
+		}
+
+		/**
+		 * Used to retrieve the next page of hits using a set of sort values from the
+		 * previous page.
+		 * <p>
+		 * API name: {@code search_after}
+		 * <p>
+		 * Adds all passed values to <code>searchAfter</code>.
+		 */
+		public final Builder searchAfter(boolean value, boolean... values) {
+			this.searchAfter = _listAdd(this.searchAfter, FieldValue.of(value));
+			List<FieldValue> fieldValues = new ArrayList<>();
+			for (boolean v : values) {
+				fieldValues.add(FieldValue.of(v));
+			}
+			this.searchAfter = _listAddAll(this.searchAfter, fieldValues);
+			return this;
+		}
+
+		/**
+		 * Used to retrieve the next page of hits using a set of sort values from the
+		 * previous page.
+		 * <p>
+		 * API name: {@code search_after}
+		 * <p>
 		 * Adds a value to <code>searchAfter</code> using a builder lambda.
 		 */
 		public final Builder searchAfter(Function<FieldValue.Builder, ObjectBuilder<FieldValue>> fn) {
@@ -2601,6 +2718,9 @@ public class SearchRequest extends RequestBase implements JsonpSerializable {
 				}
 				if (request.minCompatibleShardNode != null) {
 					params.put("min_compatible_shard_node", request.minCompatibleShardNode);
+				}
+				if (request.forceSyntheticSource != null) {
+					params.put("force_synthetic_source", String.valueOf(request.forceSyntheticSource));
 				}
 				if (request.lenient != null) {
 					params.put("lenient", String.valueOf(request.lenient));

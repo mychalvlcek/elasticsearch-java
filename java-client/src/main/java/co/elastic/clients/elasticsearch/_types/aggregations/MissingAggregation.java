@@ -17,16 +17,16 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.elasticsearch._types.FieldValue;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyAggregation;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyAggregationVariant;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ObjectBuilder;
@@ -35,6 +35,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.aggregations.MissingAggregation
 
@@ -45,7 +60,11 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class MissingAggregation extends BucketAggregationBase implements AggregationVariant {
+public class MissingAggregation extends BucketAggregationBase
+		implements
+			AggregationVariant,
+			ApiKeyAggregationVariant,
+			JsonpSerializable {
 	@Nullable
 	private final String field;
 
@@ -55,7 +74,6 @@ public class MissingAggregation extends BucketAggregationBase implements Aggrega
 	// ---------------------------------------------------------------------------------------------
 
 	private MissingAggregation(Builder builder) {
-		super(builder);
 
 		this.field = builder.field;
 		this.missing = builder.missing;
@@ -72,6 +90,14 @@ public class MissingAggregation extends BucketAggregationBase implements Aggrega
 	@Override
 	public Aggregation.Kind _aggregationKind() {
 		return Aggregation.Kind.Missing;
+	}
+
+	/**
+	 * ApiKeyAggregation variant kind.
+	 */
+	@Override
+	public ApiKeyAggregation.Kind _apiKeyAggregationKind() {
+		return ApiKeyAggregation.Kind.Missing;
 	}
 
 	/**
@@ -92,9 +118,17 @@ public class MissingAggregation extends BucketAggregationBase implements Aggrega
 		return this.missing;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		if (this.field != null) {
 			generator.writeKey("field");
 			generator.write(this.field);
@@ -106,6 +140,11 @@ public class MissingAggregation extends BucketAggregationBase implements Aggrega
 
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -207,7 +246,7 @@ public class MissingAggregation extends BucketAggregationBase implements Aggrega
 			.lazy(Builder::new, MissingAggregation::setupMissingAggregationDeserializer);
 
 	protected static void setupMissingAggregationDeserializer(ObjectDeserializer<MissingAggregation.Builder> op) {
-		BucketAggregationBase.setupBucketAggregationBaseDeserializer(op);
+
 		op.add(Builder::field, JsonpDeserializer.stringDeserializer(), "field");
 		op.add(Builder::missing, FieldValue._DESERIALIZER, "missing");
 

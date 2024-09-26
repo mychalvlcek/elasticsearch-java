@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.elasticsearch._types.Script;
@@ -28,6 +24,8 @@ import co.elastic.clients.json.JsonData;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ApiTypeHelper;
@@ -41,6 +39,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.aggregations.AutoDateHistogramAggregation
 
 /**
@@ -50,7 +63,10 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class AutoDateHistogramAggregation extends BucketAggregationBase implements AggregationVariant {
+public class AutoDateHistogramAggregation extends BucketAggregationBase
+		implements
+			AggregationVariant,
+			JsonpSerializable {
 	@Nullable
 	private final Integer buckets;
 
@@ -80,7 +96,6 @@ public class AutoDateHistogramAggregation extends BucketAggregationBase implemen
 	// ---------------------------------------------------------------------------------------------
 
 	private AutoDateHistogramAggregation(Builder builder) {
-		super(builder);
 
 		this.buckets = builder.buckets;
 		this.field = builder.field;
@@ -196,9 +211,17 @@ public class AutoDateHistogramAggregation extends BucketAggregationBase implemen
 		return this.timeZone;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		if (this.buckets != null) {
 			generator.writeKey("buckets");
 			generator.write(this.buckets);
@@ -249,6 +272,11 @@ public class AutoDateHistogramAggregation extends BucketAggregationBase implemen
 
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -425,7 +453,7 @@ public class AutoDateHistogramAggregation extends BucketAggregationBase implemen
 
 	protected static void setupAutoDateHistogramAggregationDeserializer(
 			ObjectDeserializer<AutoDateHistogramAggregation.Builder> op) {
-		BucketAggregationBase.setupBucketAggregationBaseDeserializer(op);
+
 		op.add(Builder::buckets, JsonpDeserializer.integerDeserializer(), "buckets");
 		op.add(Builder::field, JsonpDeserializer.stringDeserializer(), "field");
 		op.add(Builder::format, JsonpDeserializer.stringDeserializer(), "format");

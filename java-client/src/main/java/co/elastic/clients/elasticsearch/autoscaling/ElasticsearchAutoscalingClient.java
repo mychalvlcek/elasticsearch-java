@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.autoscaling;
 
 import co.elastic.clients.ApiClient;
@@ -35,6 +31,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.io.IOException;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the autoscaling namespace.
@@ -62,7 +73,7 @@ public class ElasticsearchAutoscalingClient extends ApiClient<ElasticsearchTrans
 	 * Direct use is not supported.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/autoscaling-delete-autoscaling-policy.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/autoscaling-delete-autoscaling-policy.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -82,7 +93,7 @@ public class ElasticsearchAutoscalingClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteAutoscalingPolicyRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/autoscaling-delete-autoscaling-policy.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/autoscaling-delete-autoscaling-policy.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -100,7 +111,7 @@ public class ElasticsearchAutoscalingClient extends ApiClient<ElasticsearchTrans
 	 * supported.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/autoscaling-get-autoscaling-capacity.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/autoscaling-get-autoscaling-capacity.html">Documentation
 	 *      on elastic.co</a>
 	 */
 	public GetAutoscalingCapacityResponse getAutoscalingCapacity() throws IOException, ElasticsearchException {
@@ -115,7 +126,7 @@ public class ElasticsearchAutoscalingClient extends ApiClient<ElasticsearchTrans
 	 * ECK. Direct use is not supported.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/autoscaling-get-autoscaling-capacity.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/autoscaling-get-autoscaling-capacity.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -135,7 +146,7 @@ public class ElasticsearchAutoscalingClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link GetAutoscalingPolicyRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/autoscaling-get-autoscaling-capacity.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/autoscaling-get-autoscaling-capacity.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -152,7 +163,7 @@ public class ElasticsearchAutoscalingClient extends ApiClient<ElasticsearchTrans
 	 * ECK. Direct use is not supported.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/autoscaling-put-autoscaling-policy.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/autoscaling-put-autoscaling-policy.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -172,7 +183,7 @@ public class ElasticsearchAutoscalingClient extends ApiClient<ElasticsearchTrans
 	 *            a function that initializes a builder to create the
 	 *            {@link PutAutoscalingPolicyRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/autoscaling-put-autoscaling-policy.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/autoscaling-put-autoscaling-policy.html">Documentation
 	 *      on elastic.co</a>
 	 */
 

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
 import co.elastic.clients.elasticsearch._types.Time;
@@ -48,12 +44,27 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: indices._types.IndexSettings
 
 /**
  *
  * @see <a href=
- *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/index-modules.html#index-modules-settings">Documentation
+ *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/index-modules.html#index-modules-settings">Documentation
  *      on elastic.co</a>
  * @see <a href="../doc-files/api-spec.html#indices._types.IndexSettings">API
  *      specification</a>
@@ -212,13 +223,9 @@ public class IndexSettings implements JsonpSerializable {
 	private final IndexSettingsTimeSeries timeSeries;
 
 	@Nullable
-	private final Integer shards;
-
-	@Nullable
 	private final Queries queries;
 
-	@Nullable
-	private final SettingsSimilarity similarity;
+	private final Map<String, SettingsSimilarity> similarity;
 
 	@Nullable
 	private final MappingLimitSettings mapping;
@@ -288,9 +295,8 @@ public class IndexSettings implements JsonpSerializable {
 		this.analysis = builder.analysis;
 		this.settings = builder.settings;
 		this.timeSeries = builder.timeSeries;
-		this.shards = builder.shards;
 		this.queries = builder.queries;
-		this.similarity = builder.similarity;
+		this.similarity = ApiTypeHelper.unmodifiable(builder.similarity);
 		this.mapping = builder.mapping;
 		this.indexingSlowlog = builder.indexingSlowlog;
 		this.indexingPressure = builder.indexingPressure;
@@ -715,14 +721,6 @@ public class IndexSettings implements JsonpSerializable {
 	}
 
 	/**
-	 * API name: {@code shards}
-	 */
-	@Nullable
-	public final Integer shards() {
-		return this.shards;
-	}
-
-	/**
 	 * API name: {@code queries}
 	 */
 	@Nullable
@@ -736,8 +734,7 @@ public class IndexSettings implements JsonpSerializable {
 	 * <p>
 	 * API name: {@code similarity}
 	 */
-	@Nullable
-	public final SettingsSimilarity similarity() {
+	public final Map<String, SettingsSimilarity> similarity() {
 		return this.similarity;
 	}
 
@@ -1050,19 +1047,20 @@ public class IndexSettings implements JsonpSerializable {
 			this.timeSeries.serialize(generator, mapper);
 
 		}
-		if (this.shards != null) {
-			generator.writeKey("shards");
-			generator.write(this.shards);
-
-		}
 		if (this.queries != null) {
 			generator.writeKey("queries");
 			this.queries.serialize(generator, mapper);
 
 		}
-		if (this.similarity != null) {
+		if (ApiTypeHelper.isDefined(this.similarity)) {
 			generator.writeKey("similarity");
-			this.similarity.serialize(generator, mapper);
+			generator.writeStartObject();
+			for (Map.Entry<String, SettingsSimilarity> item0 : this.similarity.entrySet()) {
+				generator.writeKey(item0.getKey());
+				item0.getValue().serialize(generator, mapper);
+
+			}
+			generator.writeEnd();
 
 		}
 		if (this.mapping != null) {
@@ -1280,13 +1278,10 @@ public class IndexSettings implements JsonpSerializable {
 		private IndexSettingsTimeSeries timeSeries;
 
 		@Nullable
-		private Integer shards;
-
-		@Nullable
 		private Queries queries;
 
 		@Nullable
-		private SettingsSimilarity similarity;
+		private Map<String, SettingsSimilarity> similarity;
 
 		@Nullable
 		private MappingLimitSettings mapping;
@@ -1848,14 +1843,6 @@ public class IndexSettings implements JsonpSerializable {
 		}
 
 		/**
-		 * API name: {@code shards}
-		 */
-		public final Builder shards(@Nullable Integer value) {
-			this.shards = value;
-			return this;
-		}
-
-		/**
 		 * API name: {@code queries}
 		 */
 		public final Builder queries(@Nullable Queries value) {
@@ -1875,9 +1862,11 @@ public class IndexSettings implements JsonpSerializable {
 		 * scored.
 		 * <p>
 		 * API name: {@code similarity}
+		 * <p>
+		 * Adds all entries of <code>map</code> to <code>similarity</code>.
 		 */
-		public final Builder similarity(@Nullable SettingsSimilarity value) {
-			this.similarity = value;
+		public final Builder similarity(Map<String, SettingsSimilarity> map) {
+			this.similarity = _mapPutAll(this.similarity, map);
 			return this;
 		}
 
@@ -1886,9 +1875,25 @@ public class IndexSettings implements JsonpSerializable {
 		 * scored.
 		 * <p>
 		 * API name: {@code similarity}
+		 * <p>
+		 * Adds an entry to <code>similarity</code>.
 		 */
-		public final Builder similarity(Function<SettingsSimilarity.Builder, ObjectBuilder<SettingsSimilarity>> fn) {
-			return this.similarity(fn.apply(new SettingsSimilarity.Builder()).build());
+		public final Builder similarity(String key, SettingsSimilarity value) {
+			this.similarity = _mapPut(this.similarity, key, value);
+			return this;
+		}
+
+		/**
+		 * Configure custom similarity settings to customize how search results are
+		 * scored.
+		 * <p>
+		 * API name: {@code similarity}
+		 * <p>
+		 * Adds an entry to <code>similarity</code> using a builder lambda.
+		 */
+		public final Builder similarity(String key,
+				Function<SettingsSimilarity.Builder, ObjectBuilder<SettingsSimilarity>> fn) {
+			return similarity(key, fn.apply(new SettingsSimilarity.Builder()).build());
 		}
 
 		/**
@@ -2046,9 +2051,9 @@ public class IndexSettings implements JsonpSerializable {
 		op.add(Builder::analysis, IndexSettingsAnalysis._DESERIALIZER, "analysis");
 		op.add(Builder::settings, IndexSettings._DESERIALIZER, "settings");
 		op.add(Builder::timeSeries, IndexSettingsTimeSeries._DESERIALIZER, "time_series");
-		op.add(Builder::shards, JsonpDeserializer.integerDeserializer(), "shards");
 		op.add(Builder::queries, Queries._DESERIALIZER, "queries");
-		op.add(Builder::similarity, SettingsSimilarity._DESERIALIZER, "similarity");
+		op.add(Builder::similarity, JsonpDeserializer.stringMapDeserializer(SettingsSimilarity._DESERIALIZER),
+				"similarity");
 		op.add(Builder::mapping, MappingLimitSettings._DESERIALIZER, "mapping");
 		op.add(Builder::indexingSlowlog, IndexingSlowlogSettings._DESERIALIZER, "indexing.slowlog");
 		op.add(Builder::indexingPressure, IndexingPressure._DESERIALIZER, "indexing_pressure");

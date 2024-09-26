@@ -17,12 +17,10 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyAggregate;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyAggregateVariant;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
@@ -33,6 +31,21 @@ import jakarta.json.stream.JsonGenerator;
 import java.util.Objects;
 import java.util.function.Function;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.aggregations.RangeAggregate
 
 /**
@@ -42,7 +55,10 @@ import java.util.function.Function;
  *      specification</a>
  */
 @JsonpDeserializable
-public class RangeAggregate extends MultiBucketAggregateBase<RangeBucket> implements AggregateVariant {
+public class RangeAggregate extends MultiBucketAggregateBase<RangeBucket>
+		implements
+			AggregateVariant,
+			ApiKeyAggregateVariant {
 	// ---------------------------------------------------------------------------------------------
 
 	protected RangeAggregate(AbstractBuilder<?> builder) {
@@ -60,6 +76,14 @@ public class RangeAggregate extends MultiBucketAggregateBase<RangeBucket> implem
 	@Override
 	public Aggregate.Kind _aggregateKind() {
 		return Aggregate.Kind.Range;
+	}
+
+	/**
+	 * ApiKeyAggregate variant kind.
+	 */
+	@Override
+	public ApiKeyAggregate.Kind _apiKeyAggregateKind() {
+		return ApiKeyAggregate.Kind.Range;
 	}
 
 	// ---------------------------------------------------------------------------------------------

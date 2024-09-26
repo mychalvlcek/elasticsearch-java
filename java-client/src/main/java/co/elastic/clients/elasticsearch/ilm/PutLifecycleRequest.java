@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ilm;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -34,7 +30,6 @@ import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.transport.Endpoint;
 import co.elastic.clients.transport.endpoints.SimpleEndpoint;
-import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.String;
@@ -43,6 +38,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: ilm.put_lifecycle.Request
 
@@ -58,6 +68,7 @@ public class PutLifecycleRequest extends RequestBase implements JsonpSerializabl
 	@Nullable
 	private final Time masterTimeout;
 
+	@Nullable
 	private final String name;
 
 	@Nullable
@@ -71,7 +82,7 @@ public class PutLifecycleRequest extends RequestBase implements JsonpSerializabl
 	private PutLifecycleRequest(Builder builder) {
 
 		this.masterTimeout = builder.masterTimeout;
-		this.name = ApiTypeHelper.requireNonNull(builder.name, this, "name");
+		this.name = builder.name;
 		this.policy = builder.policy;
 		this.timeout = builder.timeout;
 
@@ -93,10 +104,11 @@ public class PutLifecycleRequest extends RequestBase implements JsonpSerializabl
 	}
 
 	/**
-	 * Required - Identifier for the policy.
+	 * Identifier for the policy.
 	 * <p>
 	 * API name: {@code policy}
 	 */
+	@Nullable
 	public final String name() {
 		return this.name;
 	}
@@ -151,6 +163,7 @@ public class PutLifecycleRequest extends RequestBase implements JsonpSerializabl
 		@Nullable
 		private Time masterTimeout;
 
+		@Nullable
 		private String name;
 
 		@Nullable
@@ -181,11 +194,11 @@ public class PutLifecycleRequest extends RequestBase implements JsonpSerializabl
 		}
 
 		/**
-		 * Required - Identifier for the policy.
+		 * Identifier for the policy.
 		 * <p>
 		 * API name: {@code policy}
 		 */
-		public final Builder name(String value) {
+		public final Builder name(@Nullable String value) {
 			this.name = value;
 			return this;
 		}
@@ -278,7 +291,8 @@ public class PutLifecycleRequest extends RequestBase implements JsonpSerializabl
 
 				int propsSet = 0;
 
-				propsSet |= _name;
+				if (request.name() != null)
+					propsSet |= _name;
 
 				if (propsSet == (_name)) {
 					StringBuilder buf = new StringBuilder();
@@ -299,7 +313,8 @@ public class PutLifecycleRequest extends RequestBase implements JsonpSerializabl
 
 				int propsSet = 0;
 
-				propsSet |= _name;
+				if (request.name() != null)
+					propsSet |= _name;
 
 				if (propsSet == (_name)) {
 					params.put("name", request.name);

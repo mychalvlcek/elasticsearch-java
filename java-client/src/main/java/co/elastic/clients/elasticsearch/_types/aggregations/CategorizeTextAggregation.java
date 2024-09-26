@@ -17,15 +17,13 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ApiTypeHelper;
@@ -37,6 +35,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.aggregations.CategorizeTextAggregation
 
@@ -52,7 +65,7 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class CategorizeTextAggregation extends AggregationBase implements AggregationVariant {
+public class CategorizeTextAggregation extends AggregationBase implements AggregationVariant, JsonpSerializable {
 	private final String field;
 
 	@Nullable
@@ -84,7 +97,6 @@ public class CategorizeTextAggregation extends AggregationBase implements Aggreg
 	// ---------------------------------------------------------------------------------------------
 
 	private CategorizeTextAggregation(Builder builder) {
-		super(builder);
 
 		this.field = ApiTypeHelper.requireNonNull(builder.field, this, "field");
 		this.maxUniqueTokens = builder.maxUniqueTokens;
@@ -234,9 +246,17 @@ public class CategorizeTextAggregation extends AggregationBase implements Aggreg
 		return this.shardMinDocCount;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		generator.writeKey("field");
 		generator.write(this.field);
 
@@ -291,6 +311,11 @@ public class CategorizeTextAggregation extends AggregationBase implements Aggreg
 
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -523,7 +548,7 @@ public class CategorizeTextAggregation extends AggregationBase implements Aggreg
 
 	protected static void setupCategorizeTextAggregationDeserializer(
 			ObjectDeserializer<CategorizeTextAggregation.Builder> op) {
-		AggregationBase.setupAggregationBaseDeserializer(op);
+
 		op.add(Builder::field, JsonpDeserializer.stringDeserializer(), "field");
 		op.add(Builder::maxUniqueTokens, JsonpDeserializer.integerDeserializer(), "max_unique_tokens");
 		op.add(Builder::maxMatchedTokens, JsonpDeserializer.integerDeserializer(), "max_matched_tokens");

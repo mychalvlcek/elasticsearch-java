@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.indices;
 
 import co.elastic.clients.json.JsonpDeserializable;
@@ -30,13 +26,28 @@ import co.elastic.clients.json.JsonpSerializable;
 import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
-import co.elastic.clients.util.ApiTypeHelper;
 import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Double;
 import java.util.Objects;
 import java.util.function.Function;
+import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: indices._types.SettingsSimilarityLmj
 
@@ -47,14 +58,15 @@ import java.util.function.Function;
  *      specification</a>
  */
 @JsonpDeserializable
-public class SettingsSimilarityLmj implements JsonpSerializable {
-	private final double lambda;
+public class SettingsSimilarityLmj implements SettingsSimilarityVariant, JsonpSerializable {
+	@Nullable
+	private final Double lambda;
 
 	// ---------------------------------------------------------------------------------------------
 
 	private SettingsSimilarityLmj(Builder builder) {
 
-		this.lambda = ApiTypeHelper.requireNonNull(builder.lambda, this, "lambda");
+		this.lambda = builder.lambda;
 
 	}
 
@@ -63,9 +75,18 @@ public class SettingsSimilarityLmj implements JsonpSerializable {
 	}
 
 	/**
-	 * Required - API name: {@code lambda}
+	 * SettingsSimilarity variant kind.
 	 */
-	public final double lambda() {
+	@Override
+	public SettingsSimilarity.Kind _settingsSimilarityKind() {
+		return SettingsSimilarity.Kind.LMJelinekMercer;
+	}
+
+	/**
+	 * API name: {@code lambda}
+	 */
+	@Nullable
+	public final Double lambda() {
 		return this.lambda;
 	}
 
@@ -80,8 +101,13 @@ public class SettingsSimilarityLmj implements JsonpSerializable {
 
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		generator.writeKey("lambda");
-		generator.write(this.lambda);
+		generator.write("type", "LMJelinekMercer");
+
+		if (this.lambda != null) {
+			generator.writeKey("lambda");
+			generator.write(this.lambda);
+
+		}
 
 	}
 
@@ -99,12 +125,13 @@ public class SettingsSimilarityLmj implements JsonpSerializable {
 	public static class Builder extends WithJsonObjectBuilderBase<Builder>
 			implements
 				ObjectBuilder<SettingsSimilarityLmj> {
+		@Nullable
 		private Double lambda;
 
 		/**
-		 * Required - API name: {@code lambda}
+		 * API name: {@code lambda}
 		 */
-		public final Builder lambda(double value) {
+		public final Builder lambda(@Nullable Double value) {
 			this.lambda = value;
 			return this;
 		}
@@ -139,6 +166,7 @@ public class SettingsSimilarityLmj implements JsonpSerializable {
 
 		op.add(Builder::lambda, JsonpDeserializer.doubleDeserializer(), "lambda");
 
+		op.ignore("type");
 	}
 
 }

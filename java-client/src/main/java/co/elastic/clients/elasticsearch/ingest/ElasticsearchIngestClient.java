@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ingest;
 
 import co.elastic.clients.ApiClient;
@@ -35,6 +31,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.io.IOException;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the ingest namespace.
@@ -95,7 +106,7 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	 * Returns statistical information about geoip databases
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/geoip-processor.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/geoip-processor.html">Documentation
 	 *      on elastic.co</a>
 	 */
 	public GeoIpStatsResponse geoIpStats() throws IOException, ElasticsearchException {
@@ -156,7 +167,7 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	 * Returns a list of the built-in patterns.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/grok-processor.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/grok-processor.html">Documentation
 	 *      on elastic.co</a>
 	 */
 	public ProcessorGrokResponse processorGrok() throws IOException, ElasticsearchException {
@@ -170,7 +181,7 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	 * Creates or updates a pipeline.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ingest.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ingest.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -188,7 +199,7 @@ public class ElasticsearchIngestClient extends ApiClient<ElasticsearchTransport,
 	 *            a function that initializes a builder to create the
 	 *            {@link PutPipelineRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ingest.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ingest.html">Documentation
 	 *      on elastic.co</a>
 	 */
 

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -48,6 +44,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: ml.put_trained_model.Request
 
@@ -89,7 +100,16 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 	@Nullable
 	private final TrainedModelType modelType;
 
+	@Nullable
+	private final String platformArchitecture;
+
+	@Nullable
+	private final TrainedModelPrefixStrings prefixStrings;
+
 	private final List<String> tags;
+
+	@Nullable
+	private final Boolean waitForCompletion;
 
 	// ---------------------------------------------------------------------------------------------
 
@@ -105,7 +125,10 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 		this.modelId = ApiTypeHelper.requireNonNull(builder.modelId, this, "modelId");
 		this.modelSizeBytes = builder.modelSizeBytes;
 		this.modelType = builder.modelType;
+		this.platformArchitecture = builder.platformArchitecture;
+		this.prefixStrings = builder.prefixStrings;
 		this.tags = ApiTypeHelper.unmodifiable(builder.tags);
+		this.waitForCompletion = builder.waitForCompletion;
 
 	}
 
@@ -223,12 +246,50 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 	}
 
 	/**
+	 * The platform architecture (if applicable) of the trained mode. If the model
+	 * only works on one platform, because it is heavily optimized for a particular
+	 * processor architecture and OS combination, then this field specifies which.
+	 * The format of the string must match the platform identifiers used by
+	 * Elasticsearch, so one of, <code>linux-x86_64</code>,
+	 * <code>linux-aarch64</code>, <code>darwin-x86_64</code>,
+	 * <code>darwin-aarch64</code>, or <code>windows-x86_64</code>. For portable
+	 * models (those that work independent of processor architecture or OS
+	 * features), leave this field unset.
+	 * <p>
+	 * API name: {@code platform_architecture}
+	 */
+	@Nullable
+	public final String platformArchitecture() {
+		return this.platformArchitecture;
+	}
+
+	/**
+	 * Optional prefix strings applied at inference
+	 * <p>
+	 * API name: {@code prefix_strings}
+	 */
+	@Nullable
+	public final TrainedModelPrefixStrings prefixStrings() {
+		return this.prefixStrings;
+	}
+
+	/**
 	 * An array of tags to organize the model.
 	 * <p>
 	 * API name: {@code tags}
 	 */
 	public final List<String> tags() {
 		return this.tags;
+	}
+
+	/**
+	 * Whether to wait for all child operations (e.g. model download) to complete.
+	 * <p>
+	 * API name: {@code wait_for_completion}
+	 */
+	@Nullable
+	public final Boolean waitForCompletion() {
+		return this.waitForCompletion;
 	}
 
 	/**
@@ -280,6 +341,16 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 		if (this.modelType != null) {
 			generator.writeKey("model_type");
 			this.modelType.serialize(generator, mapper);
+		}
+		if (this.platformArchitecture != null) {
+			generator.writeKey("platform_architecture");
+			generator.write(this.platformArchitecture);
+
+		}
+		if (this.prefixStrings != null) {
+			generator.writeKey("prefix_strings");
+			this.prefixStrings.serialize(generator, mapper);
+
 		}
 		if (ApiTypeHelper.isDefined(this.tags)) {
 			generator.writeKey("tags");
@@ -333,7 +404,16 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 		private TrainedModelType modelType;
 
 		@Nullable
+		private String platformArchitecture;
+
+		@Nullable
+		private TrainedModelPrefixStrings prefixStrings;
+
+		@Nullable
 		private List<String> tags;
+
+		@Nullable
+		private Boolean waitForCompletion;
 
 		/**
 		 * The compressed (GZipped and Base64 encoded) inference definition of the
@@ -478,6 +558,44 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 		}
 
 		/**
+		 * The platform architecture (if applicable) of the trained mode. If the model
+		 * only works on one platform, because it is heavily optimized for a particular
+		 * processor architecture and OS combination, then this field specifies which.
+		 * The format of the string must match the platform identifiers used by
+		 * Elasticsearch, so one of, <code>linux-x86_64</code>,
+		 * <code>linux-aarch64</code>, <code>darwin-x86_64</code>,
+		 * <code>darwin-aarch64</code>, or <code>windows-x86_64</code>. For portable
+		 * models (those that work independent of processor architecture or OS
+		 * features), leave this field unset.
+		 * <p>
+		 * API name: {@code platform_architecture}
+		 */
+		public final Builder platformArchitecture(@Nullable String value) {
+			this.platformArchitecture = value;
+			return this;
+		}
+
+		/**
+		 * Optional prefix strings applied at inference
+		 * <p>
+		 * API name: {@code prefix_strings}
+		 */
+		public final Builder prefixStrings(@Nullable TrainedModelPrefixStrings value) {
+			this.prefixStrings = value;
+			return this;
+		}
+
+		/**
+		 * Optional prefix strings applied at inference
+		 * <p>
+		 * API name: {@code prefix_strings}
+		 */
+		public final Builder prefixStrings(
+				Function<TrainedModelPrefixStrings.Builder, ObjectBuilder<TrainedModelPrefixStrings>> fn) {
+			return this.prefixStrings(fn.apply(new TrainedModelPrefixStrings.Builder()).build());
+		}
+
+		/**
 		 * An array of tags to organize the model.
 		 * <p>
 		 * API name: {@code tags}
@@ -498,6 +616,16 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 		 */
 		public final Builder tags(String value, String... values) {
 			this.tags = _listAdd(this.tags, value, values);
+			return this;
+		}
+
+		/**
+		 * Whether to wait for all child operations (e.g. model download) to complete.
+		 * <p>
+		 * API name: {@code wait_for_completion}
+		 */
+		public final Builder waitForCompletion(@Nullable Boolean value) {
+			this.waitForCompletion = value;
 			return this;
 		}
 
@@ -538,6 +666,8 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 		op.add(Builder::metadata, JsonData._DESERIALIZER, "metadata");
 		op.add(Builder::modelSizeBytes, JsonpDeserializer.longDeserializer(), "model_size_bytes");
 		op.add(Builder::modelType, TrainedModelType._DESERIALIZER, "model_type");
+		op.add(Builder::platformArchitecture, JsonpDeserializer.stringDeserializer(), "platform_architecture");
+		op.add(Builder::prefixStrings, TrainedModelPrefixStrings._DESERIALIZER, "prefix_strings");
 		op.add(Builder::tags, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()), "tags");
 
 	}
@@ -594,6 +724,9 @@ public class PutTrainedModelRequest extends RequestBase implements JsonpSerializ
 			// Request parameters
 			request -> {
 				Map<String, String> params = new HashMap<>();
+				if (request.waitForCompletion != null) {
+					params.put("wait_for_completion", String.valueOf(request.waitForCompletion));
+				}
 				if (request.deferDefinitionDecompression != null) {
 					params.put("defer_definition_decompression", String.valueOf(request.deferDefinitionDecompression));
 				}

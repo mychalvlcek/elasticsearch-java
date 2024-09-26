@@ -17,12 +17,10 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.query_dsl;
 
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQuery;
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyQueryVariant;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -37,6 +35,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.query_dsl.BoolQuery
 
 /**
@@ -45,7 +58,7 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class BoolQuery extends QueryBase implements QueryVariant {
+public class BoolQuery extends QueryBase implements ApiKeyQueryVariant, QueryVariant {
 	private final List<Query> filter;
 
 	@Nullable
@@ -72,6 +85,14 @@ public class BoolQuery extends QueryBase implements QueryVariant {
 
 	public static BoolQuery of(Function<Builder, ObjectBuilder<BoolQuery>> fn) {
 		return fn.apply(new Builder()).build();
+	}
+
+	/**
+	 * ApiKeyQuery variant kind.
+	 */
+	@Override
+	public ApiKeyQuery.Kind _apiKeyQueryKind() {
+		return ApiKeyQuery.Kind.Bool;
 	}
 
 	/**

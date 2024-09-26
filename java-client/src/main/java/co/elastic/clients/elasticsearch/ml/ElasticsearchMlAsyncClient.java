@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.ApiClient;
@@ -36,6 +32,21 @@ import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the ml namespace.
@@ -97,7 +108,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 * multiple times throughout its lifecycle.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-close-job.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-close-job.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -116,7 +127,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link CloseJobRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-close-job.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-close-job.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -131,7 +142,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 * Deletes a calendar.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-delete-calendar.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-delete-calendar.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -149,7 +160,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteCalendarRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-delete-calendar.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-delete-calendar.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -164,7 +175,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 * Deletes scheduled events from a calendar.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-delete-calendar-event.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-delete-calendar-event.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -182,7 +193,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteCalendarEventRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-delete-calendar-event.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-delete-calendar-event.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -197,7 +208,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 * Deletes anomaly detection jobs from a calendar.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-delete-calendar-job.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-delete-calendar-job.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -215,7 +226,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteCalendarJobRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-delete-calendar-job.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-delete-calendar-job.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -230,7 +241,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 * Deletes an existing data frame analytics job.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/delete-dfanalytics.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/delete-dfanalytics.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -249,7 +260,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteDataFrameAnalyticsRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/delete-dfanalytics.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/delete-dfanalytics.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -264,7 +275,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 * Deletes an existing datafeed.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-delete-datafeed.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-delete-datafeed.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -282,7 +293,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link DeleteDatafeedRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/ml-delete-datafeed.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/ml-delete-datafeed.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1846,7 +1857,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 * Instantiates a data frame analytics job.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/put-dfanalytics.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/put-dfanalytics.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -1865,7 +1876,7 @@ public class ElasticsearchMlAsyncClient extends ApiClient<ElasticsearchTransport
 	 *            a function that initializes a builder to create the
 	 *            {@link PutDataFrameAnalyticsRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/put-dfanalytics.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/put-dfanalytics.html">Documentation
 	 *      on elastic.co</a>
 	 */
 

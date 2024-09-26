@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.analysis;
 
 import co.elastic.clients.json.JsonEnum;
@@ -41,12 +37,27 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.analysis.Normalizer
 
 /**
  *
  * @see <a href=
- *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/analysis-normalizers.html">Documentation
+ *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/analysis-normalizers.html">Documentation
  *      on elastic.co</a>
  * @see <a href="../../doc-files/api-spec.html#_types.analysis.Normalizer">API
  *      specification</a>

@@ -17,15 +17,13 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ObjectBuilder;
@@ -34,6 +32,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.aggregations.WeightedAverageAggregation
 
@@ -44,7 +57,7 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class WeightedAverageAggregation extends AggregationBase implements AggregationVariant {
+public class WeightedAverageAggregation extends AggregationBase implements AggregationVariant, JsonpSerializable {
 	@Nullable
 	private final String format;
 
@@ -60,7 +73,6 @@ public class WeightedAverageAggregation extends AggregationBase implements Aggre
 	// ---------------------------------------------------------------------------------------------
 
 	private WeightedAverageAggregation(Builder builder) {
-		super(builder);
 
 		this.format = builder.format;
 		this.value = builder.value;
@@ -119,9 +131,17 @@ public class WeightedAverageAggregation extends AggregationBase implements Aggre
 		return this.weight;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		if (this.format != null) {
 			generator.writeKey("format");
 			generator.write(this.format);
@@ -142,6 +162,11 @@ public class WeightedAverageAggregation extends AggregationBase implements Aggre
 
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -249,7 +274,7 @@ public class WeightedAverageAggregation extends AggregationBase implements Aggre
 
 	protected static void setupWeightedAverageAggregationDeserializer(
 			ObjectDeserializer<WeightedAverageAggregation.Builder> op) {
-		AggregationBase.setupAggregationBaseDeserializer(op);
+
 		op.add(Builder::format, JsonpDeserializer.stringDeserializer(), "format");
 		op.add(Builder::value, WeightedAverageValue._DESERIALIZER, "value");
 		op.add(Builder::valueType, ValueType._DESERIALIZER, "value_type");

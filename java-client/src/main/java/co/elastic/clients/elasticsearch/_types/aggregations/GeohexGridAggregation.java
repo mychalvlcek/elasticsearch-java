@@ -17,16 +17,14 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.elasticsearch._types.GeoBounds;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ApiTypeHelper;
@@ -38,6 +36,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.aggregations.GeohexGridAggregation
 
 /**
@@ -47,7 +60,7 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class GeohexGridAggregation extends BucketAggregationBase implements AggregationVariant {
+public class GeohexGridAggregation extends BucketAggregationBase implements AggregationVariant, JsonpSerializable {
 	private final String field;
 
 	@Nullable
@@ -65,7 +78,6 @@ public class GeohexGridAggregation extends BucketAggregationBase implements Aggr
 	// ---------------------------------------------------------------------------------------------
 
 	private GeohexGridAggregation(Builder builder) {
-		super(builder);
 
 		this.field = ApiTypeHelper.requireNonNull(builder.field, this, "field");
 		this.precision = builder.precision;
@@ -139,9 +151,17 @@ public class GeohexGridAggregation extends BucketAggregationBase implements Aggr
 		return this.shardSize;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		generator.writeKey("field");
 		generator.write(this.field);
 
@@ -166,6 +186,11 @@ public class GeohexGridAggregation extends BucketAggregationBase implements Aggr
 
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -280,7 +305,7 @@ public class GeohexGridAggregation extends BucketAggregationBase implements Aggr
 			.lazy(Builder::new, GeohexGridAggregation::setupGeohexGridAggregationDeserializer);
 
 	protected static void setupGeohexGridAggregationDeserializer(ObjectDeserializer<GeohexGridAggregation.Builder> op) {
-		BucketAggregationBase.setupBucketAggregationBaseDeserializer(op);
+
 		op.add(Builder::field, JsonpDeserializer.stringDeserializer(), "field");
 		op.add(Builder::precision, JsonpDeserializer.integerDeserializer(), "precision");
 		op.add(Builder::bounds, GeoBounds._DESERIALIZER, "bounds");

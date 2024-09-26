@@ -17,12 +17,10 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.security;
 
+import co.elastic.clients.elasticsearch.security.query_api_keys.ApiKeyAggregate;
+import co.elastic.clients.json.ExternallyTaggedUnion;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -35,10 +33,27 @@ import co.elastic.clients.util.ObjectBuilder;
 import co.elastic.clients.util.WithJsonObjectBuilderBase;
 import jakarta.json.stream.JsonGenerator;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: security.query_api_keys.Response
 
@@ -56,6 +71,8 @@ public class QueryApiKeysResponse implements JsonpSerializable {
 
 	private final List<ApiKey> apiKeys;
 
+	private final Map<String, ApiKeyAggregate> aggregations;
+
 	// ---------------------------------------------------------------------------------------------
 
 	private QueryApiKeysResponse(Builder builder) {
@@ -63,6 +80,7 @@ public class QueryApiKeysResponse implements JsonpSerializable {
 		this.total = ApiTypeHelper.requireNonNull(builder.total, this, "total");
 		this.count = ApiTypeHelper.requireNonNull(builder.count, this, "count");
 		this.apiKeys = ApiTypeHelper.unmodifiableRequired(builder.apiKeys, this, "apiKeys");
+		this.aggregations = ApiTypeHelper.unmodifiable(builder.aggregations);
 
 	}
 
@@ -98,6 +116,15 @@ public class QueryApiKeysResponse implements JsonpSerializable {
 	}
 
 	/**
+	 * The aggregations result, if requested.
+	 * <p>
+	 * API name: {@code aggregations}
+	 */
+	public final Map<String, ApiKeyAggregate> aggregations() {
+		return this.aggregations;
+	}
+
+	/**
 	 * Serialize this object to JSON.
 	 */
 	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
@@ -124,6 +151,11 @@ public class QueryApiKeysResponse implements JsonpSerializable {
 			generator.writeEnd();
 
 		}
+		if (ApiTypeHelper.isDefined(this.aggregations)) {
+			generator.writeKey("aggregations");
+			ExternallyTaggedUnion.serializeTypedKeys(this.aggregations, generator, mapper);
+
+		}
 
 	}
 
@@ -146,6 +178,9 @@ public class QueryApiKeysResponse implements JsonpSerializable {
 		private Integer count;
 
 		private List<ApiKey> apiKeys;
+
+		@Nullable
+		private Map<String, ApiKeyAggregate> aggregations;
 
 		/**
 		 * Required - The total number of API keys found.
@@ -202,6 +237,42 @@ public class QueryApiKeysResponse implements JsonpSerializable {
 			return apiKeys(fn.apply(new ApiKey.Builder()).build());
 		}
 
+		/**
+		 * The aggregations result, if requested.
+		 * <p>
+		 * API name: {@code aggregations}
+		 * <p>
+		 * Adds all entries of <code>map</code> to <code>aggregations</code>.
+		 */
+		public final Builder aggregations(Map<String, ApiKeyAggregate> map) {
+			this.aggregations = _mapPutAll(this.aggregations, map);
+			return this;
+		}
+
+		/**
+		 * The aggregations result, if requested.
+		 * <p>
+		 * API name: {@code aggregations}
+		 * <p>
+		 * Adds an entry to <code>aggregations</code>.
+		 */
+		public final Builder aggregations(String key, ApiKeyAggregate value) {
+			this.aggregations = _mapPut(this.aggregations, key, value);
+			return this;
+		}
+
+		/**
+		 * The aggregations result, if requested.
+		 * <p>
+		 * API name: {@code aggregations}
+		 * <p>
+		 * Adds an entry to <code>aggregations</code> using a builder lambda.
+		 */
+		public final Builder aggregations(String key,
+				Function<ApiKeyAggregate.Builder, ObjectBuilder<ApiKeyAggregate>> fn) {
+			return aggregations(key, fn.apply(new ApiKeyAggregate.Builder()).build());
+		}
+
 		@Override
 		protected Builder self() {
 			return this;
@@ -233,6 +304,7 @@ public class QueryApiKeysResponse implements JsonpSerializable {
 		op.add(Builder::total, JsonpDeserializer.integerDeserializer(), "total");
 		op.add(Builder::count, JsonpDeserializer.integerDeserializer(), "count");
 		op.add(Builder::apiKeys, JsonpDeserializer.arrayDeserializer(ApiKey._DESERIALIZER), "api_keys");
+		op.add(Builder::aggregations, ApiKeyAggregate._TYPED_KEYS_DESERIALIZER, "aggregations");
 
 	}
 

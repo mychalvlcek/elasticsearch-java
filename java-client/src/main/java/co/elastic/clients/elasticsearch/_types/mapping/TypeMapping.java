@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.mapping;
 
 import co.elastic.clients.json.JsonData;
@@ -42,6 +38,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.mapping.TypeMapping
 
@@ -93,6 +104,9 @@ public class TypeMapping implements JsonpSerializable {
 	private final Boolean enabled;
 
 	@Nullable
+	private final Boolean subobjects;
+
+	@Nullable
 	private final DataStreamTimestamp dataStreamTimestamp;
 
 	// ---------------------------------------------------------------------------------------------
@@ -114,6 +128,7 @@ public class TypeMapping implements JsonpSerializable {
 		this.source = builder.source;
 		this.runtime = ApiTypeHelper.unmodifiable(builder.runtime);
 		this.enabled = builder.enabled;
+		this.subobjects = builder.subobjects;
 		this.dataStreamTimestamp = builder.dataStreamTimestamp;
 
 	}
@@ -235,6 +250,14 @@ public class TypeMapping implements JsonpSerializable {
 	@Nullable
 	public final Boolean enabled() {
 		return this.enabled;
+	}
+
+	/**
+	 * API name: {@code subobjects}
+	 */
+	@Nullable
+	public final Boolean subobjects() {
+		return this.subobjects;
 	}
 
 	/**
@@ -366,6 +389,11 @@ public class TypeMapping implements JsonpSerializable {
 			generator.write(this.enabled);
 
 		}
+		if (this.subobjects != null) {
+			generator.writeKey("subobjects");
+			generator.write(this.subobjects);
+
+		}
 		if (this.dataStreamTimestamp != null) {
 			generator.writeKey("_data_stream_timestamp");
 			this.dataStreamTimestamp.serialize(generator, mapper);
@@ -430,6 +458,9 @@ public class TypeMapping implements JsonpSerializable {
 
 		@Nullable
 		private Boolean enabled;
+
+		@Nullable
+		private Boolean subobjects;
 
 		@Nullable
 		private DataStreamTimestamp dataStreamTimestamp;
@@ -676,6 +707,14 @@ public class TypeMapping implements JsonpSerializable {
 		}
 
 		/**
+		 * API name: {@code subobjects}
+		 */
+		public final Builder subobjects(@Nullable Boolean value) {
+			this.subobjects = value;
+			return this;
+		}
+
+		/**
 		 * API name: {@code _data_stream_timestamp}
 		 */
 		public final Builder dataStreamTimestamp(@Nullable DataStreamTimestamp value) {
@@ -736,6 +775,7 @@ public class TypeMapping implements JsonpSerializable {
 		op.add(Builder::source, SourceField._DESERIALIZER, "_source");
 		op.add(Builder::runtime, JsonpDeserializer.stringMapDeserializer(RuntimeField._DESERIALIZER), "runtime");
 		op.add(Builder::enabled, JsonpDeserializer.booleanDeserializer(), "enabled");
+		op.add(Builder::subobjects, JsonpDeserializer.booleanDeserializer(), "subobjects");
 		op.add(Builder::dataStreamTimestamp, DataStreamTimestamp._DESERIALIZER, "_data_stream_timestamp");
 
 	}

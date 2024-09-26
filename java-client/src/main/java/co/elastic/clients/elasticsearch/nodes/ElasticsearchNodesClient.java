@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.nodes;
 
 import co.elastic.clients.ApiClient;
@@ -35,6 +31,21 @@ import co.elastic.clients.util.ObjectBuilder;
 import java.io.IOException;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the nodes namespace.
@@ -133,7 +144,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns information about hot threads on each node in the cluster.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-hot-threads.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-hot-threads.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -151,7 +162,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 *            a function that initializes a builder to create the
 	 *            {@link HotThreadsRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-hot-threads.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-hot-threads.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -164,7 +175,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns information about hot threads on each node in the cluster.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-hot-threads.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-hot-threads.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -179,7 +190,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns information about nodes in the cluster.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-info.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-info.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -197,7 +208,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 *            a function that initializes a builder to create the
 	 *            {@link NodesInfoRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-info.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-info.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -210,7 +221,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns information about nodes in the cluster.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-info.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-info.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -273,7 +284,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns statistical information about nodes in the cluster.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-stats.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-stats.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -291,7 +302,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 *            a function that initializes a builder to create the
 	 *            {@link NodesStatsRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-stats.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-stats.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -304,7 +315,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns statistical information about nodes in the cluster.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-stats.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-stats.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -319,7 +330,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns low-level information about REST actions usage on nodes.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-usage.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-usage.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -337,7 +348,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 *            a function that initializes a builder to create the
 	 *            {@link NodesUsageRequest}
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-usage.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-usage.html">Documentation
 	 *      on elastic.co</a>
 	 */
 
@@ -350,7 +361,7 @@ public class ElasticsearchNodesClient extends ApiClient<ElasticsearchTransport, 
 	 * Returns low-level information about REST actions usage on nodes.
 	 * 
 	 * @see <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/cluster-nodes-usage.html">Documentation
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/cluster-nodes-usage.html">Documentation
 	 *      on elastic.co</a>
 	 */
 

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.eql;
 
 import co.elastic.clients.ApiClient;
@@ -37,6 +33,21 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 /**
  * Client for the eql namespace.
@@ -97,10 +108,9 @@ public class ElasticsearchEqlClient extends ApiClient<ElasticsearchTransport, El
 	 * Returns async results from previously executed Event Query Language (EQL)
 	 * search
 	 * 
-	 * @see [Documentation on
-	 *      elastic.co](<a href="https://www.elastic.co">https://www.elastic.co</a>
-	 *      <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-search-api.html">https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-search-api.html</a>)
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/get-async-eql-search-api.html">Documentation
+	 *      on elastic.co</a>
 	 */
 
 	public <TEvent> EqlGetResponse<TEvent> get(EqlGetRequest request, Class<TEvent> tEventClass)
@@ -120,10 +130,9 @@ public class ElasticsearchEqlClient extends ApiClient<ElasticsearchTransport, El
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link EqlGetRequest}
-	 * @see [Documentation on
-	 *      elastic.co](<a href="https://www.elastic.co">https://www.elastic.co</a>
-	 *      <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-search-api.html">https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-search-api.html</a>)
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/get-async-eql-search-api.html">Documentation
+	 *      on elastic.co</a>
 	 */
 
 	public final <TEvent> EqlGetResponse<TEvent> get(Function<EqlGetRequest.Builder, ObjectBuilder<EqlGetRequest>> fn,
@@ -135,10 +144,9 @@ public class ElasticsearchEqlClient extends ApiClient<ElasticsearchTransport, El
 	 * Returns async results from previously executed Event Query Language (EQL)
 	 * search
 	 * 
-	 * @see [Documentation on
-	 *      elastic.co](<a href="https://www.elastic.co">https://www.elastic.co</a>
-	 *      <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-search-api.html">https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-search-api.html</a>)
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/get-async-eql-search-api.html">Documentation
+	 *      on elastic.co</a>
 	 */
 
 	public <TEvent> EqlGetResponse<TEvent> get(EqlGetRequest request, Type tEventType)
@@ -158,10 +166,9 @@ public class ElasticsearchEqlClient extends ApiClient<ElasticsearchTransport, El
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link EqlGetRequest}
-	 * @see [Documentation on
-	 *      elastic.co](<a href="https://www.elastic.co">https://www.elastic.co</a>
-	 *      <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-search-api.html">https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-search-api.html</a>)
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/get-async-eql-search-api.html">Documentation
+	 *      on elastic.co</a>
 	 */
 
 	public final <TEvent> EqlGetResponse<TEvent> get(Function<EqlGetRequest.Builder, ObjectBuilder<EqlGetRequest>> fn,
@@ -175,10 +182,9 @@ public class ElasticsearchEqlClient extends ApiClient<ElasticsearchTransport, El
 	 * Returns the status of a previously submitted async or stored Event Query
 	 * Language (EQL) search
 	 * 
-	 * @see [Documentation on
-	 *      elastic.co](<a href="https://www.elastic.co">https://www.elastic.co</a>
-	 *      <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-status-api.html">https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-status-api.html</a>)
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/get-async-eql-status-api.html">Documentation
+	 *      on elastic.co</a>
 	 */
 
 	public GetEqlStatusResponse getStatus(GetEqlStatusRequest request) throws IOException, ElasticsearchException {
@@ -195,10 +201,9 @@ public class ElasticsearchEqlClient extends ApiClient<ElasticsearchTransport, El
 	 * @param fn
 	 *            a function that initializes a builder to create the
 	 *            {@link GetEqlStatusRequest}
-	 * @see [Documentation on
-	 *      elastic.co](<a href="https://www.elastic.co">https://www.elastic.co</a>
-	 *      <a href=
-	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-status-api.html">https://www.elastic.co/guide/en/elasticsearch/reference/8.13/get-async-eql-status-api.html</a>)
+	 * @see <a href=
+	 *      "https://www.elastic.co/guide/en/elasticsearch/reference/8.14/get-async-eql-status-api.html">Documentation
+	 *      on elastic.co</a>
 	 */
 
 	public final GetEqlStatusResponse getStatus(

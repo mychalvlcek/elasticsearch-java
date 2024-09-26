@@ -17,12 +17,9 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
+import co.elastic.clients.elasticsearch._types.Script;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
@@ -38,6 +35,21 @@ import java.lang.String;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.aggregations.VariableWidthHistogramAggregation
 
@@ -61,6 +73,9 @@ public class VariableWidthHistogramAggregation implements AggregationVariant, Js
 	@Nullable
 	private final Integer initialBuffer;
 
+	@Nullable
+	private final Script script;
+
 	// ---------------------------------------------------------------------------------------------
 
 	private VariableWidthHistogramAggregation(Builder builder) {
@@ -69,6 +84,7 @@ public class VariableWidthHistogramAggregation implements AggregationVariant, Js
 		this.buckets = builder.buckets;
 		this.shardSize = builder.shardSize;
 		this.initialBuffer = builder.initialBuffer;
+		this.script = builder.script;
 
 	}
 
@@ -129,6 +145,14 @@ public class VariableWidthHistogramAggregation implements AggregationVariant, Js
 	}
 
 	/**
+	 * API name: {@code script}
+	 */
+	@Nullable
+	public final Script script() {
+		return this.script;
+	}
+
+	/**
 	 * Serialize this object to JSON.
 	 */
 	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
@@ -159,6 +183,11 @@ public class VariableWidthHistogramAggregation implements AggregationVariant, Js
 			generator.write(this.initialBuffer);
 
 		}
+		if (this.script != null) {
+			generator.writeKey("script");
+			this.script.serialize(generator, mapper);
+
+		}
 
 	}
 
@@ -187,6 +216,9 @@ public class VariableWidthHistogramAggregation implements AggregationVariant, Js
 
 		@Nullable
 		private Integer initialBuffer;
+
+		@Nullable
+		private Script script;
 
 		/**
 		 * The name of the field.
@@ -231,6 +263,21 @@ public class VariableWidthHistogramAggregation implements AggregationVariant, Js
 			return this;
 		}
 
+		/**
+		 * API name: {@code script}
+		 */
+		public final Builder script(@Nullable Script value) {
+			this.script = value;
+			return this;
+		}
+
+		/**
+		 * API name: {@code script}
+		 */
+		public final Builder script(Function<Script.Builder, ObjectBuilder<Script>> fn) {
+			return this.script(fn.apply(new Script.Builder()).build());
+		}
+
 		@Override
 		protected Builder self() {
 			return this;
@@ -264,6 +311,7 @@ public class VariableWidthHistogramAggregation implements AggregationVariant, Js
 		op.add(Builder::buckets, JsonpDeserializer.integerDeserializer(), "buckets");
 		op.add(Builder::shardSize, JsonpDeserializer.integerDeserializer(), "shard_size");
 		op.add(Builder::initialBuffer, JsonpDeserializer.integerDeserializer(), "initial_buffer");
+		op.add(Builder::script, Script._DESERIALIZER, "script");
 
 	}
 

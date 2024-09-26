@@ -17,16 +17,14 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.aggregations;
 
 import co.elastic.clients.elasticsearch._types.FieldValue;
 import co.elastic.clients.json.JsonpDeserializable;
 import co.elastic.clients.json.JsonpDeserializer;
 import co.elastic.clients.json.JsonpMapper;
+import co.elastic.clients.json.JsonpSerializable;
+import co.elastic.clients.json.JsonpUtils;
 import co.elastic.clients.json.ObjectBuilderDeserializer;
 import co.elastic.clients.json.ObjectDeserializer;
 import co.elastic.clients.util.ObjectBuilder;
@@ -38,6 +36,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: _types.aggregations.RareTermsAggregation
 
 /**
@@ -47,7 +60,7 @@ import javax.annotation.Nullable;
  *      specification</a>
  */
 @JsonpDeserializable
-public class RareTermsAggregation extends BucketAggregationBase implements AggregationVariant {
+public class RareTermsAggregation extends BucketAggregationBase implements AggregationVariant, JsonpSerializable {
 	@Nullable
 	private final TermsExclude exclude;
 
@@ -72,7 +85,6 @@ public class RareTermsAggregation extends BucketAggregationBase implements Aggre
 	// ---------------------------------------------------------------------------------------------
 
 	private RareTermsAggregation(Builder builder) {
-		super(builder);
 
 		this.exclude = builder.exclude;
 		this.field = builder.field;
@@ -166,9 +178,17 @@ public class RareTermsAggregation extends BucketAggregationBase implements Aggre
 		return this.valueType;
 	}
 
+	/**
+	 * Serialize this object to JSON.
+	 */
+	public void serialize(JsonGenerator generator, JsonpMapper mapper) {
+		generator.writeStartObject();
+		serializeInternal(generator, mapper);
+		generator.writeEnd();
+	}
+
 	protected void serializeInternal(JsonGenerator generator, JsonpMapper mapper) {
 
-		super.serializeInternal(generator, mapper);
 		if (this.exclude != null) {
 			generator.writeKey("exclude");
 			this.exclude.serialize(generator, mapper);
@@ -205,6 +225,11 @@ public class RareTermsAggregation extends BucketAggregationBase implements Aggre
 
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return JsonpUtils.toString(this);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -406,7 +431,7 @@ public class RareTermsAggregation extends BucketAggregationBase implements Aggre
 			.lazy(Builder::new, RareTermsAggregation::setupRareTermsAggregationDeserializer);
 
 	protected static void setupRareTermsAggregationDeserializer(ObjectDeserializer<RareTermsAggregation.Builder> op) {
-		BucketAggregationBase.setupBucketAggregationBaseDeserializer(op);
+
 		op.add(Builder::exclude, TermsExclude._DESERIALIZER, "exclude");
 		op.add(Builder::field, JsonpDeserializer.stringDeserializer(), "field");
 		op.add(Builder::include, TermsInclude._DESERIALIZER, "include");

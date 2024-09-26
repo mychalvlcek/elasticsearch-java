@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.tasks;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -43,6 +39,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: tasks.cancel.Request
 
@@ -84,8 +95,8 @@ public class CancelRequest extends RequestBase {
 	}
 
 	/**
-	 * A comma-separated list of actions that should be cancelled. Leave empty to
-	 * cancel all.
+	 * Comma-separated list or wildcard expression of actions used to limit the
+	 * request.
 	 * <p>
 	 * API name: {@code actions}
 	 */
@@ -94,9 +105,7 @@ public class CancelRequest extends RequestBase {
 	}
 
 	/**
-	 * A comma-separated list of node IDs or names to limit the returned
-	 * information; use <code>_local</code> to return information from the node
-	 * you're connecting to, leave empty to get information from all nodes
+	 * Comma-separated list of node IDs or names used to limit the request.
 	 * <p>
 	 * API name: {@code nodes}
 	 */
@@ -105,8 +114,7 @@ public class CancelRequest extends RequestBase {
 	}
 
 	/**
-	 * Cancel tasks with specified parent task id (node_id:task_number). Set to -1
-	 * to cancel all.
+	 * Parent task ID used to limit the tasks.
 	 * <p>
 	 * API name: {@code parent_task_id}
 	 */
@@ -116,7 +124,7 @@ public class CancelRequest extends RequestBase {
 	}
 
 	/**
-	 * Cancel the task with specified task id (node_id:task_number)
+	 * ID of the task.
 	 * <p>
 	 * API name: {@code task_id}
 	 */
@@ -159,8 +167,8 @@ public class CancelRequest extends RequestBase {
 		private Boolean waitForCompletion;
 
 		/**
-		 * A comma-separated list of actions that should be cancelled. Leave empty to
-		 * cancel all.
+		 * Comma-separated list or wildcard expression of actions used to limit the
+		 * request.
 		 * <p>
 		 * API name: {@code actions}
 		 * <p>
@@ -172,8 +180,8 @@ public class CancelRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of actions that should be cancelled. Leave empty to
-		 * cancel all.
+		 * Comma-separated list or wildcard expression of actions used to limit the
+		 * request.
 		 * <p>
 		 * API name: {@code actions}
 		 * <p>
@@ -185,9 +193,7 @@ public class CancelRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of node IDs or names to limit the returned
-		 * information; use <code>_local</code> to return information from the node
-		 * you're connecting to, leave empty to get information from all nodes
+		 * Comma-separated list of node IDs or names used to limit the request.
 		 * <p>
 		 * API name: {@code nodes}
 		 * <p>
@@ -199,9 +205,7 @@ public class CancelRequest extends RequestBase {
 		}
 
 		/**
-		 * A comma-separated list of node IDs or names to limit the returned
-		 * information; use <code>_local</code> to return information from the node
-		 * you're connecting to, leave empty to get information from all nodes
+		 * Comma-separated list of node IDs or names used to limit the request.
 		 * <p>
 		 * API name: {@code nodes}
 		 * <p>
@@ -213,8 +217,7 @@ public class CancelRequest extends RequestBase {
 		}
 
 		/**
-		 * Cancel tasks with specified parent task id (node_id:task_number). Set to -1
-		 * to cancel all.
+		 * Parent task ID used to limit the tasks.
 		 * <p>
 		 * API name: {@code parent_task_id}
 		 */
@@ -224,7 +227,7 @@ public class CancelRequest extends RequestBase {
 		}
 
 		/**
-		 * Cancel the task with specified task id (node_id:task_number)
+		 * ID of the task.
 		 * <p>
 		 * API name: {@code task_id}
 		 */

@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch._types.mapping;
 
 import co.elastic.clients.json.JsonData;
@@ -42,6 +38,21 @@ import java.lang.Object;
 import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
+
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
 
 // typedef: _types.mapping.Property
 
@@ -85,7 +96,7 @@ public class Property implements OpenTaggedUnion<Property.Kind, Object>, JsonpSe
 
 		DoubleRange("double_range"),
 
-		DynamicProperty("{dynamic_property}"),
+		DynamicType("{dynamic_type}"),
 
 		Alias("alias"),
 
@@ -142,6 +153,8 @@ public class Property implements OpenTaggedUnion<Property.Kind, Object>, JsonpSe
 		Shape("shape"),
 
 		Short("short"),
+
+		SparseVector("sparse_vector"),
 
 		Text("text"),
 
@@ -420,21 +433,20 @@ public class Property implements OpenTaggedUnion<Property.Kind, Object>, JsonpSe
 	}
 
 	/**
-	 * Is this variant instance of kind {@code {dynamic_property}}?
+	 * Is this variant instance of kind {@code {dynamic_type}}?
 	 */
-	public boolean isDynamicProperty() {
-		return _kind == Kind.DynamicProperty;
+	public boolean isDynamicType() {
+		return _kind == Kind.DynamicType;
 	}
 
 	/**
-	 * Get the {@code {dynamic_property}} variant value.
+	 * Get the {@code {dynamic_type}} variant value.
 	 *
 	 * @throws IllegalStateException
-	 *             if the current variant is not of the {@code {dynamic_property}}
-	 *             kind.
+	 *             if the current variant is not of the {@code {dynamic_type}} kind.
 	 */
-	public DynamicProperty dynamicProperty() {
-		return TaggedUnionUtils.get(this, Kind.DynamicProperty);
+	public DynamicProperty dynamicType() {
+		return TaggedUnionUtils.get(this, Kind.DynamicType);
 	}
 
 	/**
@@ -916,6 +928,23 @@ public class Property implements OpenTaggedUnion<Property.Kind, Object>, JsonpSe
 	}
 
 	/**
+	 * Is this variant instance of kind {@code sparse_vector}?
+	 */
+	public boolean isSparseVector() {
+		return _kind == Kind.SparseVector;
+	}
+
+	/**
+	 * Get the {@code sparse_vector} variant value.
+	 *
+	 * @throws IllegalStateException
+	 *             if the current variant is not of the {@code sparse_vector} kind.
+	 */
+	public SparseVectorProperty sparseVector() {
+		return TaggedUnionUtils.get(this, Kind.SparseVector);
+	}
+
+	/**
 	 * Is this variant instance of kind {@code text}?
 	 */
 	public boolean isText() {
@@ -1179,15 +1208,15 @@ public class Property implements OpenTaggedUnion<Property.Kind, Object>, JsonpSe
 			return this.doubleRange(fn.apply(new DoubleRangeProperty.Builder()).build());
 		}
 
-		public ObjectBuilder<Property> dynamicProperty(DynamicProperty v) {
-			this._kind = Kind.DynamicProperty;
+		public ObjectBuilder<Property> dynamicType(DynamicProperty v) {
+			this._kind = Kind.DynamicType;
 			this._value = v;
 			return this;
 		}
 
-		public ObjectBuilder<Property> dynamicProperty(
+		public ObjectBuilder<Property> dynamicType(
 				Function<DynamicProperty.Builder, ObjectBuilder<DynamicProperty>> fn) {
-			return this.dynamicProperty(fn.apply(new DynamicProperty.Builder()).build());
+			return this.dynamicType(fn.apply(new DynamicProperty.Builder()).build());
 		}
 
 		public ObjectBuilder<Property> alias(FieldAliasProperty v) {
@@ -1490,6 +1519,17 @@ public class Property implements OpenTaggedUnion<Property.Kind, Object>, JsonpSe
 			return this.short_(fn.apply(new ShortNumberProperty.Builder()).build());
 		}
 
+		public ObjectBuilder<Property> sparseVector(SparseVectorProperty v) {
+			this._kind = Kind.SparseVector;
+			this._value = v;
+			return this;
+		}
+
+		public ObjectBuilder<Property> sparseVector(
+				Function<SparseVectorProperty.Builder, ObjectBuilder<SparseVectorProperty>> fn) {
+			return this.sparseVector(fn.apply(new SparseVectorProperty.Builder()).build());
+		}
+
 		public ObjectBuilder<Property> text(TextProperty v) {
 			this._kind = Kind.Text;
 			this._value = v;
@@ -1580,7 +1620,7 @@ public class Property implements OpenTaggedUnion<Property.Kind, Object>, JsonpSe
 		op.add(Builder::denseVector, DenseVectorProperty._DESERIALIZER, "dense_vector");
 		op.add(Builder::double_, DoubleNumberProperty._DESERIALIZER, "double");
 		op.add(Builder::doubleRange, DoubleRangeProperty._DESERIALIZER, "double_range");
-		op.add(Builder::dynamicProperty, DynamicProperty._DESERIALIZER, "{dynamic_property}");
+		op.add(Builder::dynamicType, DynamicProperty._DESERIALIZER, "{dynamic_type}");
 		op.add(Builder::alias, FieldAliasProperty._DESERIALIZER, "alias");
 		op.add(Builder::flattened, FlattenedProperty._DESERIALIZER, "flattened");
 		op.add(Builder::float_, FloatNumberProperty._DESERIALIZER, "float");
@@ -1609,6 +1649,7 @@ public class Property implements OpenTaggedUnion<Property.Kind, Object>, JsonpSe
 		op.add(Builder::searchAsYouType, SearchAsYouTypeProperty._DESERIALIZER, "search_as_you_type");
 		op.add(Builder::shape, ShapeProperty._DESERIALIZER, "shape");
 		op.add(Builder::short_, ShortNumberProperty._DESERIALIZER, "short");
+		op.add(Builder::sparseVector, SparseVectorProperty._DESERIALIZER, "sparse_vector");
 		op.add(Builder::text, TextProperty._DESERIALIZER, "text");
 		op.add(Builder::tokenCount, TokenCountProperty._DESERIALIZER, "token_count");
 		op.add(Builder::unsignedLong, UnsignedLongNumberProperty._DESERIALIZER, "unsigned_long");

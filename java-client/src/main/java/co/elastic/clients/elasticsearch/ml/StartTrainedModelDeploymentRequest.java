@@ -17,10 +17,6 @@
  * under the License.
  */
 
-//----------------------------------------------------
-// THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
-//----------------------------------------------------
-
 package co.elastic.clients.elasticsearch.ml;
 
 import co.elastic.clients.elasticsearch._types.ErrorResponse;
@@ -43,6 +39,21 @@ import java.util.Objects;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 
+//----------------------------------------------------------------
+//       THIS CODE IS GENERATED. MANUAL EDITS WILL BE LOST.
+//----------------------------------------------------------------
+//
+// This code is generated from the Elasticsearch API specification
+// at https://github.com/elastic/elasticsearch-specification
+//
+// Manual updates to this file will be lost when the code is
+// re-generated.
+//
+// If you find a property that is missing or wrongly typed, please
+// open an issue or a PR on the API specification repository.
+//
+//----------------------------------------------------------------
+
 // typedef: ml.start_trained_model_deployment.Request
 
 /**
@@ -57,6 +68,9 @@ import javax.annotation.Nullable;
 public class StartTrainedModelDeploymentRequest extends RequestBase {
 	@Nullable
 	private final String cacheSize;
+
+	@Nullable
+	private final String deploymentId;
 
 	private final String modelId;
 
@@ -83,6 +97,7 @@ public class StartTrainedModelDeploymentRequest extends RequestBase {
 	private StartTrainedModelDeploymentRequest(Builder builder) {
 
 		this.cacheSize = builder.cacheSize;
+		this.deploymentId = builder.deploymentId;
 		this.modelId = ApiTypeHelper.requireNonNull(builder.modelId, this, "modelId");
 		this.numberOfAllocations = builder.numberOfAllocations;
 		this.priority = builder.priority;
@@ -109,6 +124,16 @@ public class StartTrainedModelDeploymentRequest extends RequestBase {
 	@Nullable
 	public final String cacheSize() {
 		return this.cacheSize;
+	}
+
+	/**
+	 * A unique identifier for the deployment of the model.
+	 * <p>
+	 * API name: {@code deployment_id}
+	 */
+	@Nullable
+	public final String deploymentId() {
+		return this.deploymentId;
 	}
 
 	/**
@@ -205,6 +230,9 @@ public class StartTrainedModelDeploymentRequest extends RequestBase {
 		@Nullable
 		private String cacheSize;
 
+		@Nullable
+		private String deploymentId;
+
 		private String modelId;
 
 		@Nullable
@@ -235,6 +263,16 @@ public class StartTrainedModelDeploymentRequest extends RequestBase {
 		 */
 		public final Builder cacheSize(@Nullable String value) {
 			this.cacheSize = value;
+			return this;
+		}
+
+		/**
+		 * A unique identifier for the deployment of the model.
+		 * <p>
+		 * API name: {@code deployment_id}
+		 */
+		public final Builder deploymentId(@Nullable String value) {
+			this.deploymentId = value;
 			return this;
 		}
 
@@ -407,6 +445,9 @@ public class StartTrainedModelDeploymentRequest extends RequestBase {
 				}
 				if (request.threadsPerAllocation != null) {
 					params.put("threads_per_allocation", String.valueOf(request.threadsPerAllocation));
+				}
+				if (request.deploymentId != null) {
+					params.put("deployment_id", request.deploymentId);
 				}
 				if (request.waitFor != null) {
 					params.put("wait_for", request.waitFor.jsonValue());
